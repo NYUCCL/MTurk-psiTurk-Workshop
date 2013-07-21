@@ -3,8 +3,7 @@
   <head>
     <title>Using Mechanical Turk for Cognition Experiments - John McDonnell and Todd Gureckis</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script src="remark.min.js" type="text/javascript">
-    </script>
+    <style rel="stylesheet" href="styles/monokai.css">
     <style type="text/css" media="screen">
     /* Slideshow styles */
       @import url(http://fonts.googleapis.com/css?family=Lobster);
@@ -126,8 +125,6 @@
         -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
-       
-        font-size: 11px;
       }
 
 
@@ -1021,26 +1018,31 @@ class: center, middle
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# Programming for the web
+# Programming for the web:<br> .blue[The Good]
 
-### 1. The good  
 - Take advantage of all the perks of online experiments (as discussed in part 1)
 - Web experiments will run in the lab too!
 - There is a vast amount of open source software available for customizing websites for your specific needs and a large community to help out
 
+---
 
-### 2. The challenge:
+.task[Part 3: Building dynamic web experiments]
+# Programming for the web: <br>.blue[The Challenge]
+
 To get your experiment up and running on AMT you need to:
 
 - Host it on your own server
-- Make the link and configuration details available to Amazon 
+- Post the advertisement and request for subjects to Amazon's servers.
 - Communicate with Amazon when a HIT has been completed
 - Save the data 
 - Become a web developer
 
-### 3. Luckily..
-The psiTurk toolbox takes care of most of this! 
+---
 
+.task[Part 3: Building dynamic web experiments]
+# Programming for the web: Luckily...
+
+The psiTurk toolbox takes care of most of this! 
 
 ---
 
@@ -1149,34 +1151,32 @@ To help you get started to build your experiment we included a small library tha
 
 Some of the important Javascript functions we provide:
 
-    .javascript
-    exp = new Psiturk()
-    
-    // Handling experiment info: 
-    exp.taskdata.get("condition") // returns subect's server-assigned condition
-    exp.taskdata.get("counterbalance") // returns subect's server-assigned condition
+```javascript
+exp = new Psiturk()
 
-    // Handling resources:
-    exp.getPage("mypage.html") // Returns HTML from mypage.html, stored in the templates directory
-    
-    // Recording subjects' responses
-    exp.recordTrialData([1, "L", "CORRECT"]) // Records data for the current trial
-    exp.recordUnstructuredData("Age", 28) // Records data for the current trial
-    
-    // Save data to server
-    exp.saveData()
+// Handling experiment info: 
+exp.taskdata.get("condition") // returns subect's server-assigned condition
+exp.taskdata.get("counterbalance") // returns subect's server-assigned condition
+
+// Handling resources:
+exp.getPage("mypage.html") // Returns HTML from mypage.html, stored in the templates directory
+
+// Recording subjects' responses
+exp.recordTrialData([1, "L", "CORRECT"]) // Records data for the current trial
+exp.recordUnstructuredData("Age", 28) // Records data for the current trial
+
+// Save data to server
+exp.saveData()
+```
 
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# The Psiturk javascript object
+# Javascript libraries
 
-    .javascript
-    exp = new Psiturk
-    exp.taskdata.get("condition") // returns subect's server-assigned condition
-    exp.taskdata.get("counterbalance") // returns subect's server-assigned condition
-
-    exp.getPage("mypage.html") // Returns HTML from mypage.html, stored in the templates directory
+- .blue[**Jquery**] -- Manipulating the website
+- .blue[**BackboneJS**] -- Organizing your code
+- .blue[**Underscore**] -- Helpful functions, e.g. `_.shuffle()` to shuffle stimuli
 
 <!-- ---
 
@@ -1329,9 +1329,10 @@ class: middle, center
 
     </textarea>
     <script src="remark.min.js" type="text/javascript">
+        
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      var slideshow = remark.create({ "highlightStyle": "tomorrow-night-bright" });
     </script>
   </body>
 </html>
