@@ -124,6 +124,18 @@
        
         font-size: 11px;
       }
+
+
+      /* Two-column layout */
+      .left-column {
+        width: 70%;
+        float: left;
+      }
+
+      .right-column {
+        width: 30%;
+        float: right;
+      }
       
       #slideshow .slide .content code { font-size: 11px;
         
@@ -150,53 +162,21 @@ name: overview
 
 # Overview
 
-(NOT UP TO DATE)
-
 1. What is [Amazon Mechanical Turk](https://www.mturk.com) (AMT)?  [Jump to this section](#whatisamt)
     - Who are the people in the system (demographics, etc...)?
-    - How can it be used for research?
     - How good is the data?
 
-2. What are the mechanics of using the system? [Jump to this section](#part2)
+2. Running dynamic experiments on AMT [Jump to this section](#part2)
 
-    - Step through setting up account
-    - Using built-in tools to create simple form-based experiments
+    - Show how to use the AMT website 
+    - Step through setting up an experiment using psiTurk 
     
-3. Building dynamic web experiments (psiTurk) [Jump to this section](#part3)
+3. Basics of running experiments in the lab [Jump to this section](#part3)
 
     - Introduce a [simple Python-based web-app](https://github.com/NYUCCL/psiTurk) we developed which could be a starting framework for your experiment
     - Using the AMT sandbox to develop and test your app
     - Manage hits, using a browser-based dashboard 
 
----
-
-name: credits
-
-# On the shoulders of giants...
-
-<!-- .right[<img src="http://green-leads.web5.hubspot.com/Portals/53598/images/logo1.gif">] -->
-
-<div class="people">
-<img src="images/Mason.jpg" width="125" align="left" style="margin-right: 50px; margin-top: 20px;">
-### [Winter Mason](http://www.stevens.edu/provost/directory/faculty_profile.php?faculty_id=1687) (Asst. Prof at Stevens Institute, formerly Yahoo! Research)
-A social psychologist who really pioneered the documentation of using Mechanical Turk
-for behavioral researchers.
-</div>
-
-
-<div class="people">
-<img src="images/Suri200.jpg" width="125" align="left" style="margin-right: 50px; margin-top: 20px;">
-### [Siddharth Suri](http://www.sidsuri.com/About_Sid.html) (Microsoft Research, formerly Yahoo! Research)
-A computer scientist doing web-based behavioral experiments on how
-aspect of social network structure influence human behavior.
-</div>
-
-
-### They have created some helpful resources
-- A really helpful and informative [post](http://smallsocialsystems.com/blog/?p=95) on Winter's blog
-- CogSci2011 [workshop](http://cognitivesciencesociety.org/uploads/2011-t4.pdf): "How to use Mechanical Turk for Cognitive Science Research"
-- Mason, W. & Suri, S. (2012). [A Guide to Behavioral Experiments on Mechanical Turk](http://www.springerlink.com/content/5236n965288116v8/fulltext.pdf). _Behavior Research
-Methods_, 44(1), 1-23. 
 
 ---
 
@@ -253,16 +233,14 @@ class: center, middle
 .task[Part 1: What is AMT?]
 # What kinds of tasks?
 
-- Difficult to solve for computer or machine lerning systems, e.g.
-    - Provide three key words to describe a randomly selected image
+- Difficult to solve for computer or machine learning systems
     - Does this photograph contain a car?
-    - Type the characters in this image (e.g., captcha)
+    - Provide three key words to describe this image
     - What does this [twitter](https://blog.twitter.com/2013/improving-twitter-search-real-time-human-computation) hashtag refer to?
     
 - Traditional "work"
-    - Go to http://mycompany.com and email me some comments on what you think of the design
-    - Write a positive review for this product online (pay per paragraph)
     - Translate this text from english to spanish
+    - Write a positive review for this product online
     
 - .green[Help with science!]
     - **Participate in my human cognition/perception/learning experiment!**
@@ -292,7 +270,7 @@ class: shortlist, middle
 
 - United States demographic
     - 55-65% female
-    - Most make betweeh <$60k/year
+    - Most make  <$60k/year
     - Median age of 30
     - Hold bachelor’s and are young
     - Distribution mostly similar to US internet pop.
@@ -304,7 +282,7 @@ class: shortlist, middle
 .task[Part 1: What is AMT?]
 # US Distribution
 
-<img src="images/us-turk-distribution.jpg" width="750">
+<img src="images/us-turk-distribution.jpg" width="700">
 
 Taken from this [website](http://www-958.ibm.com/software/data/cognos/manyeyes/visualizations/geographic-distribution-of-turkers).
 
@@ -313,32 +291,10 @@ Taken from this [website](http://www-958.ibm.com/software/data/cognos/manyeyes/v
 .task[Part 1: What is AMT?]
 # World Distribution
 
-<img src="images/world-turk-distribution.jpg" width="750">
+<img src="images/world-turk-distribution.jpg" width="700">
 
 Tamir (2011)
 
----
-
-
-
-.task[Part 1: What is AMT?]
-# What motivates workers?
-
-
-#.green.center[Money.]
-
-.smallquote[
-Mitch Fernandez, 38, a disabled former United States Army linguist, said by e-mail that he became a Turk Worker for various reasons: “At first, I was just curious about the idea of crowdsourcing.” But he said he soon found that by working about two hours a day, he could often earn more than $100 a week. In the last nine months he made around $4,000, which he used to buy a high-definition television, a DVD player and a new subwoofer — all from Amazon.com.]
-
-.smallquote[
-“I do this primarily for the money, but I also view it as a form of therapy to get me used to working again.” he explained. “The experience has gotten me thinking about pursuing a library science degree.” - From [New York Times](http://www.nytimes.com/2007/03/25/business/yourmoney/25Stream.html)
-]
-
-<hr>
-
-.smallquote[
-"Is it worthwhile? I was genuinely surprised by the experience. If you have the ability to throw down readable writing very quickly, you can earn minimum wage with the Turk – more than I ever expected. Given the short timeframe and the wide variety of tasks available, it’s something that you can sit down and do in short little bits when it’s convenient for you.” - From [The simple Dollar](http://www.thesimpledollar.com/2009/07/05/can-you-actually-earn-reasonable-money-from-mechanical-turk/)
-]
 
 ---
 
@@ -362,16 +318,17 @@ Mitch Fernandez, 38, a disabled former United States Army linguist, said by e-ma
 
 
 .task[Part 1: What is AMT?]
-# Requesters outside of the US
+# Outside of the US
 
-- Unfortunately, accessing AMT from outside the US can be a bit tricky
+- Unfortunately, getting a requester account from outside the US can be a bit tricky
 
 - Requires US billing address  and US debit or credit card
 
 - If you can't get a US credit card, setting up the account with a US American collaborator is an option
 
 - Or consider international/European alternatives to AMT, such as [clickworker](http://www.clickworker.com), [crowdflower](http://crowdflower.com). The latter actually uses AMT workers, but is accessible worldwide 
-(the psiTurk toolbox could in principle be adapted to work with other platforms)
+
+- (the psiTurk toolbox could in principle be adapted to work with other platforms)
 
 
 ---
@@ -379,24 +336,17 @@ Mitch Fernandez, 38, a disabled former United States Army linguist, said by e-ma
 .task[Part 1: What is AMT?]
 # Why use web experiments?
 
-- **Convenient** - and our scripts help you even more
-
+- **Convenient**
+    - And the psiTurk toolbox will help you even more
 - **Fast** 
-    - collect LOTS of data quickly
-    - collect large N studies
-    - pilot study materials
-    - norm/pretest stimuli
-    
+    - collect a lot of data quickly, also good for piloting
 - **Affordable**
-    - Relative to fMRI incredibly cost effective
-    - We paid about $2.00 for 15-25 minute session
-
+    - Workers will sign up for $2.00 for 15-25 minute session
 - **Anonymous**
-    - Subject never meets experimenter, in some ways testing conditions more uniform since no RAs
-    - Subjects unlikely to know about "your lab" and the types of studies you do
-
+    - Subject never meets experimenter
+    - Subjects unlikely to know about "your lab"
 - **Replicable**
-    - Very easy to share your experiment code to let people replicate your work cheaply
+    - Very easy to share your experiment code
 
 
 ---
@@ -404,22 +354,42 @@ Mitch Fernandez, 38, a disabled former United States Army linguist, said by e-ma
 
 .task[Part 1: What is AMT?]
 # Why not?
+A few concerns have been raised abut AMT data:
 
-- **Selection Bias**:
-    - Are AMT workers qualified enough for cognition experiments, and are they representative of the general population?  
-    ***Workers span a broad range of demographics, arguably the sample is less "special" than your usual undergraduate population***
+- **Selection Bias:** No control over who takes the experiment
+    - Makes AMT sample probably less useful for research on ideology, or political attitudes (53% are self-identified liberals, 25% conservatives, 73% voted for Obama)
 
-- **Contamination of the subject base**  
-    - Turkers might participate in the same experiment multiple times  
-  ***Can be prevented by keeping track of worker's IDs***
+    - See [this](http://www.culturalcognition.net/blog/2013/7/10/fooled-twice-shame-on-who-problems-with-mechanical-turk-stud.html) blogpost for a discussion
 
-- **.red[Non-lab setting]**  
-    - No experimental oversight over participants  
-  ***Truly difficult to control, but keeping a record of how often participants switch windows or take breaks can help cleaning data at the end***
+    - On the other hand, 20 year old university students are a very "special" sample too!
 
-- **Data Quality**  
-    - Are workers motivated enough to yield good results?  
-    ***Many findings replicate (see upcoming slides), but it is advisable to check participants' understanding***
+---
+.task[Part 1: What is AMT?]
+# Why not?
+
+- **Contamination of subject base** 
+    - Recent [study](http://www.jessechandler.com/uploads/2/8/0/5/2805897/13_chandler_mueller__paolacci.pdf) has addressed this question
+    - Can be a problem for *very* widely used paradigms 
+      - 56% had participated in Prisonner's Dilemma, 52% in Ultimatum game, 30% Trolley problem
+
+    - Cross talk (e.g. in AMT forums) seems to be rare (workers share information about payment, duration, etc.)
+
+    - For specific studies repeated participation can be prevented by recording worker's IDs (see psiTurk sections)
+
+
+---
+.task[Part 1: What is AMT?]
+# Why not?
+- **Non-lab setting **
+    - [This](http://www.jessechandler.com/uploads/2/8/0/5/2805897/13_chandler_mueller__paolacci.pdf) study showed
+      - 27% were not alone while working on the HIT
+      - 18% were watching tv
+      - 14% were listening to music
+      - 55% were monitoring other requesters at the same time
+
+    - Recording how often participants change windows/take breaks might help clean data (again, see psiTurk section)
+
+    - Still, the lack of experimental control over a worker's environment might make some studies unsuitable for AMT
 
 
 ---
@@ -457,34 +427,236 @@ name: replicationstudies
 .task[Part 1: What is AMT?]
 # Do classic findings replicate?
 
-- Some members of our lab recently conducted a range of classic psychology experiments (stroop, task-switching, simon, visual cuing, attentional blink, subliminal priming, and category learning)
+- Some members of our lab recently contributed to this study that conducted a range of classic psychology experiments on AMT.red[*]
 
-    - **Crump, M. J., McDonnell, J. V., & Gureckis, T. M. (2013). Evaluating Amazon's Mechanical Turk as a tool for experimental behavioral research. PloS one, 8(3).**
+    - Crump, M. J., McDonnell, J. V., & Gureckis, T. M. (2013). [Evaluating Amazon's Mechanical Turk as a tool for experimental behavioral research.](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0057410) PloS one, 8(3).
 
-- Important outcomes
-    - Most findings replicated with high fidelity
-    - Payment didn't have much effect on performance but did affect signup  and dropout rate
-    - Checking participants' understanding of the task increased data quality considerably
+- The goal was to see if classic findings replicate and also check what methods might help increase the quality of the data
+
+- Focus was on reaction time findings that require sustained attention from subjects and precise recording of responses
+
+- And learning experiments involving more cognitive effort 
+
+
+.footnote[.red[*] For a summary of the paper see this [blog post](http://gureckislab.org/blog/?p=1297)]
+
+---
+
+
+
+.task[Part 1: What is AMT?]
+# RT Results
+.left-column[ 
+
+Stroop
+
+  - People respond faster to congruent (e.g. .blue[blue]) than to incongruent (.red[blue]) items
+
+ <!-- Note: Draw original Logan & Zbrodoff  data: 809 1023 -->
+
+Task Switching
+
+  - Faster RT if task stays the same (e.g. "Odd or Even?") than when tasks alternate ("Odd or Even?" / "Small or Large?")
+
+Flanker
+
+  - When identifying a target (e.g. "h"), congruent flankers ("hhhhh") lead to faster RTs than incongruent ("ffhhff") ones
+    <!-- Wendt & Kiesel [28] found similar RTs for compatible (604 ms) and incompatible trials (647 ms). Across experiments, the S -->
+
+]
+  
+
+.center[.right-column[
+<img src="images/StroopResult.png" width="160">
+<img src="images/TaskSwitchingResult.png" width="160">
+<img src="images/FlankerResult.png" width="160">
+]]  
+
+
+---
+
+.task[Part 1: What is AMT?]
+# RT Results
+.left-column[ 
+
+Simon
+
+  - Targets that are spatially compatible with response key are identified faster
+    <!-- or example, in a first training session that had six times as many trials, Proctor & Lu (Exp 1) [31] reported 459 ms for compatible and 481 ms for incompatible trials.  -->
+
+Visual Cuing 
+
+  - Stimulus detection is faster for cued  versus uncued targets if cue is presented after short interval (~300ms) and slower after longer interval (~400ms)
+
+Attentional Blink
+
+  - During rapid serial visual presentation visual target detection is impaired if target is displayed 100-500ms after another one
+
+
+]
+
+
+.center[.right-column[
+<img src="images/SimonResult.png" width="160">
+<img src="images/ContCueing.png" width="160">
+<img src="images/AttentionalBlink.png" width="160">
+]]  
+
+---
+
+
+.task[Part 1: What is AMT?]
+# Subliminal Perception
+
+Masked priming
+
+  - Responding to arrow probes that are either compatibly (prime: >>, probe: >>) or incompatibly primed (prime: <<, probe: >>) at durations of 16, 32, 48, 64, 80, and 96 ms 
+
+  -  Previous finding was that compatibility effects are negative for very short prime durations and positive for longer ones
+
+
+  .center[
+   <img src="images/PrimingResult.png" width="330">
+   ]
+
+  - Only partially replicated: no negative compatibulity effect
+
+  - Possibility: Lower bound on display duration in browser?
+
+---
+
+
+.task[Part 1: What is AMT?]
+# Category Learning
+
+- Classic Shepard, Hovland, & Jenkins (1961) paper
+
+- Six different ways of classifying the same 8 items (geometric figures with 3 binary dimensions) into deterministic categories
+
+- Generally Type I is learned faster than Type II which is faster that Types III-V, with Type VI the hardest
+.center[
+<img src="images/abstractstructureSHJ.png" width="150"><img src="images/dimstructureSHJ.png" width="170">
+<img src="images/SHJDifficulty.png" width="550">
+]
+
+---
+
+.task[Part 1: What is AMT?]
+# Results
+
+Although type I was learned easily, performance on all other types was significantly worse than in the original study
+<br><br>
+
+.center[
+<img src="images/exp8-nosofsky.png" height="290"><img src="images/exp8-amt.png" height="290">
+]
+
+
+---
+
+
+
+
+.task[Part 1: What is AMT?]
+# Incentives too low?
+There was little difference between high ($2 to $4.50 with bonus), medium ($1.50), and low-payment ($.75) groups
+<br><br>
+
+<img src="images/exp9-typeII.png" height="290">
+<img src="images/exp9-typeIV.png" height="290">
 
 
 ---
 
 
 .task[Part 1: What is AMT?]
+# Bad instructions?
+Including manipulation checks that asked non-trivial questions about the task improved performance on types II to VI
+<br><br>
+
+<img src="images/exp10-n-vs-amt.png" height="310">
+<img src="images/exp10-l-vs-amt.png" height="310">
+
+---
+
+
+.task[Part 1: What is AMT?]
+# Summary
+
+- Important outcomes
+    - Most findings replicated with high fidelity
+
+    - But experiments that rely on very precise and fast stimulus presentation may reach the limit of most browsers
+
+    - Payment didn't have much effect on performance but did affect signup and dropout rates
+
+    - Checking participants' understanding of the task increased data quality considerably
+    
+<!-- - Note: dropout rates are much higher than in the lab, so maybe consider reporting those if they might interact with performance
+ -->
+
+
+---
+
+.task[Part 1: What is AMT?]
+# Replication in other Areas
+
+1. Clinical (Shapiro, et al, 2013)
+
+  - Scores on a range of psychometric tests had high internal consistency and test-retest reliability  (r =.87)
+
+2. Personality (Buhrmeser, et al, 2011)
+
+  - No difference in consistency on personality questionnaires at different payment levels, and absolute levels of consistency and test-retest reliability were high (r = .88)
+
+3. JDM (Paolacci, et al, 2010)
+  
+  -  Compared classic JDM studies (Asian Disease, Linda, Physicians Problem) on AMT and university subject pool
+  - No difference in failure rate of catch trials and pattern of behavior in studies but AMT subjects were more risk averse
+
+---
+
+.task[Part 1: What is AMT?]
 # A word on Ethics
 
 - How much should you pay?  
-    - As much as the market supports or should it match what you pay in the lab (roughly)? Or minimum wage?
+    - As much as the market supports or should it match what you pay in the lab (roughly)?
     - AMT has been criticized for incentivizing companies to outsource labor without adequate compensation (for discussions see for example [here](http://priceonomics.com/who-makes-below-minimum-wage-in-the-mechanical/?utm_source=buffer&utm_campaign=Buffer&utm_content=buffer2d486&utm_medium=twitter), [here](http://economix.blogs.nytimes.com/2013/03/18/the-unregulated-work-of-mechanical-turk/), and [here](http://www.huffingtonpost.com/julian-dobson/mechanical-turk-amazons-underclass_b_2687431.html))
 
-- Can you get IRB approval for your experiment (yes, you MUST run it by the IRB first)
+- Can you get IRB approval for your experiment?
 
-    - Arguably, workers have more freedom of choice than lab participants, they can walk away at any point, without sunk costs of travelling or social pressure from experimenter
-
-    - Main concern would be if materials/stimuli are controversial and might reflect poorly on the field, sponsors, or university
+    - Arguably, workers have more freedom of choice than lab participants (can stop experiment any time)
 
     - Wasn't very difficult to add to an existing IRB at NYU
 
+
+---
+
+.task[Part 1: What is AMT?]
+# Be a good requester
+ 
+Workers share information about good and bad requesters:
+<br><br>
+.center[
+<img src="images/Turkopticon.png" height="400">
+]
+ 
+---
+
+.task[Part 1: What is AMT?]
+# Be a good requester
+ 
+A few recommendations to keep workers happy...
+
+1. Before running, test your experiments on .blue[different browsers] and the sandbox (AMT's testing environment)
+
+1. Give explicit instructions and .blue[show warnings] about closing the page, going back in the browsers, etc.
+
+1. Start collecting data in .blue[small batches]
+ 
+1. If something goes wrong, provide an .blue[alternative payment method] for workers who are unable to finish or submit HIT
+    - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
+ 
 
 ---
 
