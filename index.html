@@ -492,25 +492,54 @@ name: replicationstudies
 name: part2
 class: center, middle
  
-.task[Part 1: What is AMT?]
+.task[Part 2: Demo]
  
-# What are the mechanics of using the AMT system? 
- 
+# Using AMT and the psiTurk Dashboard
+
+
 ---
 
-class: middle
 
-.task[Part 1: What is AMT?]
+class: middle
+.task[Part 2: Using AMT]
 
 # Two perspectives:
  
 1. What is it like to use AMT as a [**Worker**](#terminology)?
  
 2. What is it like to use AMT as a [**Requester**](#terminology)?
-   
+
+# Two platforms:
+
+1. The sandbox
+
+    - Worker sandbox ([workersandbox.mturk.com](http://workersandbox.mturk.com))
+
+    - Requester sandbox ([requestersandbox.mturk.com](http://requestersandbox.mturk.com))
+
+2. The real deal ([www.mturk.com](http://www.mturk.com))
+
+
 ---
+
+
+.task[Part 2: Using AMT]
+# What is a HIT ?
+
+
+- A unit of work, or a "Human Intelligence Task"
+
+- In our experiments, a HIT is typically an entire experiment (as might be done in the lab)
  
-.task[Part 1: What is AMT?]
+- However, it is up to the .orange[**Requester**] to determine what constitutes a HIT
+ 
+- Could be one trial in an experiment, and you just offer the .blue[**Worker**] as many HITs as they care to do
+ 
+
+---
+
+
+.task[Part 2: Using AMT]
 # Using AMT as a .blue[**Worker**]
  
 1. Sign up on Amazon's site
@@ -518,47 +547,45 @@ class: middle
 2. Search for tasks (i.e., HITs) to do online through the AMT interface.
  
 3. Worker accepts a HIT.  The task appears in a frame within the AMT website.
- 
+
+    - Accepting a HIT means it is removed from the .orange[**Requester**]'s account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
+
 4. After completing the HIT, the worker signals to Amazon that they have completed the task
  
- 5. Payment will be credited to a worker's account some time after completion
-<hr>
- 
-Some important conceptual notes:
- 
-- (as we will see) .orange[**Requester**]s send out a job with a certain number of HITs
- 
-- When a .blue[**Worker**] accepts the HIT is it removed from the .orange[**Requester**]'s account
- 
-    - If the .blue[**Worker**] doesn't want to do the task they have to _return_ the HIT to the .orange[**Requester**] so someone else can do it
- 
-- As a .orange[**Requester**] you get to set how long a HIT can be "held" like this
- 
----
- 
-.task[Part 1: What is AMT?]
-# What is a HIT ?
- 
-- In our experiments, a HIT is typically an entire experiment (as might be done in the lab)
- 
-- However, it is up to the .orange[**Requester**] to determine what constitutes a HIT
- 
-- Could be one trial in an experiment, and you just offer the .blue[**Worker**] as many HITs as they care to do
- 
-- We will walk through an example soon...
- 
+5. Payment will be credited to a worker's account some time after completion
+
+
 ---
 
-class: center, middle
 
-.task[Part 2: The mechanics]
-# Demo: Using AMT as a .blue[**Worker**] 
- 
-<iframe src="http://www.mturk.com/mturk/findhits"></iframe>
- 
+.task[Part 2: Using AMT]
+# Using AMT as a .blue[**Worker**] 
+
+## Search view
+
+
 ---
- 
-.task[Part 1: What is AMT?]
+
+
+.task[Part 2: Using AMT]
+# Using AMT as a .blue[**Worker**] 
+
+## Hit details 
+
+
+---
+
+
+.task[Part 2: Using AMT]
+# Using AMT as a .blue[**Worker**] 
+
+## Ad view
+
+
+---
+
+
+.task[Part 2: Using AMT]
 # Using AMT as a .orange[**Requester**]
  
 1. Open a Amazon Web Services (AWS) account: [Subscribe here](http://aws.amazon.com)
@@ -567,7 +594,7 @@ class: center, middle
    
 1. Create a "dummy" email account which you can use to deal with inevitable issues that come up with Workers
     - Workers ***will*** contact you when they have issues
-    - Need a way to deal with this efficiently and quickly
+    - Need a way to deal with this efficiently and quickly (your reputation depends on it!)
      
 1. Use the built-in Amazon template or "External Question" approach to design your experiment
  
@@ -578,39 +605,35 @@ class: center, middle
  
 ---
 
-class: center, middle
 
-.task[Part 2: The mechanics]
-# Demo: Using AMT as a .orange[**Requester**] 
+.task[Part 2: Using AMT]
+# Using AMT as a .orange[**Requester**]
  
-<iframe src="https://requester.mturk.com/create/projects"></iframe>
+## Creating a project
+
  
 ---
 
 
+.task[Part 2: Using AMT]
+# Using AMT as a .orange[**Requester**]
  
-.task[Part 1: What is AMT?]
-# Be a good requester
- 
-A few things to bear in mind...
+## Creating a new batch
 
-1. Test your experiment on .blue[different browsers]
 
-1. Use the .blue[sandbox] for testing!
-
-1. Provide users with explicit instructions and .blue[show warnings] about closing the page, going back in the browsers, etc.
-    - For many more "basic" HITs it's ok to close the window and return another time
-    - So workers might complain if they do this and it breaks the experiment
-
-1. Start collecting data in .blue[small batches]
- 
-1. If something goes wrong, provide an .blue[alternative payment method] for workers who did your experiment but were unable to submit the HIT
-    - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
- 
- 
 ---
+
+
+.task[Part 2: Using AMT]
+# Using AMT as a .orange[**Requester**]
+
+## Crediting participants
+
+
+---
+
  
-.task[Part 1: What is AMT?]
+.task[Part 2: Using AMT]
 # AMT's built-in question templates
 
 ###Why use them?
@@ -622,77 +645,66 @@ A few things to bear in mind...
 - HITs can be individualized with different content for each
 
 
+---
+
+.task[Part 2: Using AMT]
+# AMT's built-in question templates
+
 ###But...
 - Dynamic elements cannot be included!
 - For those purposes, you want to use AMTs **external question** type
 
+
 ---
 
-class: center, middle
 
 .task[Part 2: The mechanics]
-# Enter Doug, stage left
- 
- 
-
-
-<!--  
-- **External Question**
-    - Pushes user off the AMT site to your own website
-    - You can leverage full power of the "Interweb" (custom Javascript, Flash, etc...)
-    - You need to have a publically accessible webserver
-    - Most coding involved
-        - Our software is intended to help with this
-  -->
----
- 
- 
-.task[Part 2: The mechanics]
-# More about external questions...
- 
-     
-- The link to the site. Could be anything! Must link back to Amazon at the end (we'll show you how)
+# External questions 
  
 - You are responsible for:
-    - Hosting
-       - **At minimum** you need a computer with a web-accessible HTTP server running
-       - A static IP address may simplify things
-       - You probably want to avoid trying to host it over WiFi since NAT/Firewalls can make your site inaccessible to the global Internet
-     
+    - Hosting the experiment
+       - **At minimum** you need a computer with a web-accessible HTTP server running (a static IP address may simplify things)
+       - You probably want to avoid trying to host it over WiFi 
+
     - Posting your link to Amazon
      
     - Communicating back to Amazon when the HIT has been completed
      
     - Approving completed HITs for payment in a timely manner
      
-    - Dealing quickly with .blue[**Worker**] issues.  Welcome to tech support.
+    - Dealing quickly with .blue[**Worker**] issues
      
     - Saving your data in a secure place, etc..
- 
+
+
 ---
- 
-.task[Part 2: The mechanics]
-# Requesting an External Question
- 
-- **URL** 
-    - basic link to your experiment.
-- **Title**.
-- **Description**.
-- **Keywords**.
-- **Lifetime**. 
-    - _...how long will it be available?_
-- **Duration**. 
-    - _...how long are people allowed to take?_
-- **Qualifications**. 
-    - _...country? ...consistency?_
- 
-_Oddly, there is no web interface for this. You need to use scripts. Fortunately, we've got you covered in [Part 3](psiturk.html)._
- 
+
+
+.task[Part 2: Using AMT]
+# External questions
+
+- Interactions with AMT that psiTurk handles:
+
+    - Submit a request for HITs (through the Dashboard)
+
+    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group') .red[[1]]
+
+    - After HIT is accepted, provide a link to the experiment .red[[1]]
+
+    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT. .red[[2]]
+
+
+.footnote[
+psiTurk hint .red[[1]]: see templates/mturkindex.html<br />
+psiTurk hint .red[[2]]: see templates/thanks.html
+]
+
+
 ---
- 
-.task[Part 2: The mechanics]
- 
-# Hosting an Advertisement
+
+
+.task[Part 2: Using AMT]
+# External questions
 
 - When participants see your HIT in the list, they will see basic metadata:
 
@@ -700,34 +712,88 @@ _Oddly, there is no web interface for this. You need to use scripts. Fortunately
 
 - Once they click "View a HIT in this group," they see whatever your site is serving up, in our case this is the default:
 
-<iframe src="http://puncture.psych.nyu.edu:22361/mturk?assignmentId=ASSIGNMENT_ID_NOT_AVAILABLE&hitId=dummyhit"></iframe>
- 
+
 ---
 
-# A Participant Accepts
+
+.task[Part 2: Using AMT]
+# Creating a HIT with psiTurk
+
+<img src="images/screenshot_dashboard.png" width="750" />
+
+
+---
+
+
+.task[Part 2: Using AMT]
+# Creating a HIT with psiTurk
+
+<img src="images/screenshot_awsinfo.png" width="750" />
+
+
+---
+
+
+.task[Part 2: Using AMT]
+# Creating a HIT with psiTurk
+
+<img src="images/screenshot_database.png" width="750" />
+
+
+---
+
+
+.task[Part 2: Using AMT]
+# External questions
+
+## A Participant Accepts
 
 Upon accepting the HIT, they see... whatever you want them to see! In our case,
 it's this:
 
-<iframe src="http://puncture.psych.nyu.edu:22361/mturk?workerId=testing&assignmentId=testing&hitId=testing"></iframe>
+The link to the site. Could be anything! Must link back to Amazon at the end (we'll show you how)
+
 
 ---
 
-# Finishing up
+
+.task[Part 2: Using AMT]
+# External questions
 
 The last thing served to the participant is a button they can use to inform
 Amazon that they have finished the HIT. This submits a form with their
 identifying information to `http://www.mturk.com/mturk/externalSubmit`.
 
-<iframe src="http://puncture.psych.nyu.edu:22361/mturk?workerId=finished&assignmentId=finished&hitId=finished"></iframe>
 
 ---
 
-# Crediting participants
 
-<iframe src="https://requestersandbox.mturk.com/manage"></iframe>
+.task[Part 2: Using AMT]
+# External questions
+
+Error upon trying again.
+
 
 ---
+
+.task[Part 2. Using AMT]
+# Be a good requester
+ 
+1. Test your experiment on .blue[different browsers]
+
+1. Use the .blue[sandbox] for testing!
+
+1. Provide users with explicit instructions and .blue[show warnings] about closing the page, going back in the browsers, etc.
+    - For many more "basic" HITs it's ok to close the window and return another time
+
+1. Start collecting data in .blue[small batches]
+ 
+1. If something goes wrong, provide an .blue[alternative payment method] for workers who did your experiment but were unable to submit the HIT
+    - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
+
+
+---
+
 
 class: center, middle
 # End of Part 2
