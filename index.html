@@ -1273,9 +1273,11 @@ class: center, middle
   - If you installed Python using Enthought you don't need to install pip separately. If you want to use another version of Python, you may have to install pip, for example like this:
 
 
-    .bash
-    curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-    [sudo] python get-pip.py
+
+```bash
+curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+[sudo] python get-pip.py
+```
 
 
 
@@ -1283,11 +1285,9 @@ class: center, middle
 
 - To install psiTurk simply run:
 
-
-    .bash
-    pip install git+git://github.com/NYUCCL/psiTurk.git@dev
-
-    (should be on master branch by workshop)
+```bash
+pip install git+git://github.com/NYUCCL/psiTurk.git@dev
+```
 
 ---
 
@@ -1297,33 +1297,27 @@ class: center, middle
 
 # Running the Stroop demo
 
-***Goal***
+***Goals***
 
-- Post a HIT on AMT.
+- Post a HIT.
+- Use demo code as the basis for a new project
 
 
-**1. Sign up for [AWS account](http://aws.amazon.com/) **
+**1. Check out the demo repository**
 
-**2. Check out the demo repository**
-
-    .bash
-    git clone git://github.com/NYUCCL/psiTurk.git
+```bash
+git clone git://github.com/NYUCCL/psiTurk.git
+```
 
 - or download it as a [zip file](https://github.com/NYUCCL/psiTurk/archive/master.zip).
 - You can modify this experiment to create your own.
 
 
-**3. Move into the repository**
+**2. Move into the demo repository**
 
-    .bash
-    cd psiturk
-
-
-**4.Start the dashboard**
-
-    .bash
-    psiturk
-
+```bash
+cd psiturk
+```
 
 ---
 
@@ -1332,21 +1326,18 @@ class: center, middle
 
 # Modifying the Stroop task
 
-***Goal***
-
-- Use our demo code as the base for a new project
+**3.Launch psiturk**
 
 
-** Directory structure **
-
-- psiTurk expects to find files in certain places
-- You'll spend most of your time in the static folder
-- /static
-    - task.js (logic)
-    - task.css (appearance)
+```bash
+psiturk
+```
 
 
-** Let's get our hands dirty...**
+<br>
+** Now, Let's get our hands dirty!**
+
+- hands-on dashboard and code demo
 
 
 ---
