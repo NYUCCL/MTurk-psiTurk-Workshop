@@ -156,27 +156,6 @@ _Department of Psychology_
 _New York University_  
 ]
 
----
-
-name: overview
-
-# Overview
-
-1. What is [Amazon Mechanical Turk](https://www.mturk.com) (AMT)?  [Jump to this section](#whatisamt)
-    - Who are the people in the system (demographics, etc...)?
-    - How good is the data?
-
-2. Running dynamic experiments on AMT [Jump to this section](#part2)
-
-    - Show how to use the AMT website 
-    - Step through setting up an experiment using psiTurk 
-    
-3. Basics of running experiments in the lab [Jump to this section](#part3)
-
-    - Introduce a [simple Python-based web-app](https://github.com/NYUCCL/psiTurk) we developed which could be a starting framework for your experiment
-    - Using the AMT sandbox to develop and test your app
-    - Manage hits, using a browser-based dashboard 
-
 
 ---
 
@@ -191,7 +170,7 @@ class: shortlist, middle
 
 3. Introduce the psiturk toolbox for making AMT-based web experiments as painless as possible
 
-
+Get slides here: [https://github.com/NYUCCL/MTurkWorkshop_CogSci2013](https://github.com/NYUCCL/MTurkWorkshop_CogSci2013) (bottom right: "download zip")
 ---
 
 name: whatisamt
@@ -203,16 +182,15 @@ class: center, middle
 .task[Part 1: What is AMT?]
 # The history
 
-<img src="images/bezos.jpg" width="250" align="right"><br>
 
-
-- Developed by [Amazon.com](http://amazon.com) by Peter Cohen
+- Developed by [Amazon.com](http://amazon.com)
 
 - Originally for in-house use to detect duplicate product postings on Amazon's site .red[*]
 
-- Jeff Bezos calls it "artificial artificial intelligence"
+<br><br>
+.center[<img src="images/AMTLogo.png" width="300">
+]
 
-- Name originates from a mechanical chess illusion/automaton by Wolfgang von Kempelen in the 18th century
 
 
 .footnote[.red[*] Nice summary in the [New York Times](http://www.nytimes.com/2007/03/25/business/yourmoney/25Stream.html)]
@@ -250,15 +228,6 @@ class: shortlist, middle
     - Distribution mostly similar to US internet pop.
     
 - See Ipeirotis, et al. (2010) or Mason and Siddharth (2011).
-
----
-
-.task[Part 1: What is AMT?]
-# US Distribution
-
-<img src="images/us-turk-distribution.jpg" width="700">
-
-Taken from this [website](http://www-958.ibm.com/software/data/cognos/manyeyes/visualizations/geographic-distribution-of-turkers).
 
 ---
 
@@ -313,7 +282,7 @@ Tamir (2011)
 - **Convenient**
     - And the psiTurk toolbox will help you even more
 - **Fast** 
-    - collect a lot of data quickly, also good for piloting
+    - Collect a lot of data quickly, also good for piloting
 - **Affordable**
     - Workers will sign up for $2.00 for 15-25 minute session
 - **Anonymous**
@@ -332,7 +301,7 @@ A few concerns have been raised abut AMT data:
 <br><br>
 
 - **Selection Bias:** No control over who takes the experiment
-    - Makes AMT sample probably less useful for research on ideology, or political attitudes (53% are self-identified liberals, 25% conservatives, 73% voted for Obama)
+    - Makes AMT sample probably less useful for research on ideology, or political attitudes (53% are self-identified liberals, 25% conservatives, 73% voted for Obama, see details [here](http://themonkeycage.org/2012/12/19/how-representative-are-amazon-mechanical-turk-workers/))
 
     - See [this](http://www.culturalcognition.net/blog/2013/7/10/fooled-twice-shame-on-who-problems-with-mechanical-turk-stud.html) blogpost for a discussion
 
@@ -349,8 +318,8 @@ A few concerns have been raised abut AMT data:
 
     - Cross talk (e.g. in AMT forums) seems to be rare (workers share information about payment, duration, etc.)
 
-    - For specific studies repeated participation can be prevented by recording worker's IDs (see psiTurk sections)
-
+    - For specific studies repeated participation can be prevented by recording worker's IDs
+ - .blue[PsiTurk toolbox helps with this!]
 
 ---
 .task[Part 1: What is AMT?]
@@ -360,9 +329,9 @@ A few concerns have been raised abut AMT data:
       - 27% were not alone while working on the HIT
       - 18% were watching tv
       - 14% were listening to music
-      - 55% were monitoring other requesters at the same time
 
-    - Recording how often participants change windows/take breaks might help clean data (again, see psiTurk section)
+    - Recording how often participants change windows/take breaks might help clean data
+  - .blue[PsiTurk toolbox helps with this!]
 
     - Still, the lack of experimental control over a worker's environment might make some studies unsuitable for AMT
 
@@ -372,10 +341,7 @@ A few concerns have been raised abut AMT data:
 
 class: center, middle
 
-# How does the data compare to that collected in the lab? .red[*]
-
-
-.left.footnote[.red[*]Check out our discussion of this at our [Thinking about Thinking](http://gureckislab.org/blog/) blog ]
+# How does the data compare to that collected in the lab?
 
 
 ---
@@ -424,12 +390,12 @@ name: replicationstudies
 
 
 .task[Part 1: What is AMT?]
-# RT Results
+# Stimulus Detection
 .left-column[ 
 
 Stroop
 
-  - People respond faster to congruent (e.g. .blue[blue]) than to incongruent (.red[blue]) items
+  - People respond faster to congruent (e.g. .blue[blue]) than to incongruent (.green[blue]) items
 
 
 Task Switching
@@ -453,7 +419,7 @@ Flanker
 ---
 
 .task[Part 1: What is AMT?]
-# RT Results
+# Stimulus Detection
 .left-column[ 
 
 Simon
@@ -463,7 +429,7 @@ Simon
 
 Visual Cuing 
 
-  - Stimulus detection is faster for cued  versus uncued targets if cue is presented after short interval (~300ms) and slower after longer interval (~400ms)
+  - Stimulus detection is faster for cued  versus uncued targets if cue is presented after short interval (<=300ms) and slower after longer interval (>=400ms)
 
 Attentional Blink
 
@@ -498,7 +464,7 @@ Masked priming
 
   - Only partially replicated: no negative compatibility effect
 
-  - Possibility: Lower bound on display duration in browser?
+  - Lower bound on display duration in browser!
 
 ---
 
@@ -611,11 +577,12 @@ Including manipulation checks that asked non-trivial questions about the task im
 
 .task[Part 1: What is AMT?]
 # Be a good requester
- 
-Workers share information about good and bad requesters:
+- If your task breaks, workers *will* e-mail you!
+
+- They also share information about good and bad requesters:
 <br><br>
 .center[
-<img src="images/Turkopticon.png" height="400">
+<img src="images/Turkopticon.png" height="350">
 ]
  
 ---
@@ -634,6 +601,17 @@ A few recommendations to keep workers happy...
 1. If something goes wrong, provide an .blue[alternative payment method] for workers who are unable to finish or submit HIT
     - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
  
+
+---
+
+class: center, middle
+
+.task[Part 1: What is AMT?]
+
+# End of .blue[Part 1]
+Questions?
+
+
 
 ---
 
@@ -680,7 +658,7 @@ class: middle
 
 - In our experiments, a HIT is typically an entire experiment (as might be done in the lab)
  
-- However, it is up to the .orange[**Requester**] to determine what constitutes a HIT
+- However, it is up to the **Requester** to determine what constitutes a HIT
  
 - Could be one trial in an experiment, and you just offer the .blue[**Worker**] as many HITs as they care to do
  
@@ -697,7 +675,7 @@ class: middle
  
 3. Worker accepts a HIT.  The task appears in a frame within the AMT website.
 
-    - Accepting a HIT means it is removed from the .orange[**Requester**]'s account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
+3. Accepting a HIT means it is removed from the .orange[**Requester**] account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
 
 4. After completing the HIT, the worker signals to Amazon that they have completed the task
  
@@ -707,29 +685,9 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Search view
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Hit details 
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Ad view
-
+class: center, middle
+# Let's do a HIT
+ 
 
 ---
 
@@ -745,9 +703,9 @@ class: middle
     - Workers ***will*** contact you when they have issues
     - Need a way to deal with this efficiently and quickly (your reputation depends on it!)
      
-1. Use the built-in Amazon template or "External Question" approach to design your experiment
+1. Use a built-in Amazon template or "External Question" approach to design your experiment
  
-1. Test your code on the "sandbox" website before going live
+1. Test your code on the "sandbox"
  
 1. Go live! 
  
@@ -755,33 +713,13 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a project
-
- 
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a new batch
+class: center, middle
+# Let's request some HITs
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
-
-## Crediting participants
-
-
----
-
- 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
 
@@ -795,6 +733,7 @@ class: middle
 
 
 ---
+
 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
@@ -821,7 +760,7 @@ class: middle
      
     - Approving completed HITs for payment in a timely manner
      
-    - Dealing quickly with .blue[**Worker**] issues
+    - Dealing quickly with worker issues
      
     - Saving your data in a secure place, etc..
 
@@ -836,121 +775,29 @@ class: middle
 
     - Submit a request for HITs (through the Dashboard)
 
-    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group') .red[[1]]
+    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group')
 
-    - After HIT is accepted, provide a link to the experiment .red[[1]]
+    - After HIT is accepted, provide a link to the experiment
 
-    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT. .red[[2]]
+    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT.
 
-
+<!--
 .footnote[
 psiTurk hint .red[[1]]: see templates/mturkindex.html<br />
 psiTurk hint .red[[2]]: see templates/thanks.html
 ]
+-->
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# External questions
-
-- When participants see your HIT in the list, they will see basic metadata:
-
-<img src="images/listing.png" width="750" />
-
-- Once they click "View a HIT in this group," they see whatever your site is serving up, in our case this is the default:
+class: center, middle
+# psiTurk Dashboard
 
 
 ---
 
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_dashboard.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_awsinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_database.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_server.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_hitconfig.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_expinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-## A Participant Accepts
-
-Upon accepting the HIT, they see... whatever you want them to see! In our case,
-it's this:
-
-The link to the site. Could be anything! Must link back to Amazon at the end (we'll show you how)
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-The last thing served to the participant is a button they can use to inform
-Amazon that they have finished the HIT. This submits a form with their
-identifying information to `http://www.mturk.com/mturk/externalSubmit`.
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-Error upon trying again.
-
-
----
 
 .task[Part 2. Using AMT]
 # Be a good requester
@@ -972,7 +819,7 @@ Error upon trying again.
 
 
 class: center, middle
-# End of Part 2
+# End of .blue[Part 2]
 ### .gray[Time for a break!]
  
 
@@ -1023,7 +870,17 @@ Web development has a lot of moving parts:
     - Style defined in <span class="blue">CSS</span>.
     - Programs written in <span class="blue">Javascript</span>.
 
+<<<<<<< Updated upstream
 ???
+=======
+class: center, middle
+
+.task[Part 3: Building dynamic web experiments]
+# psiTurk
+### .gray[Our framework for doing online experiments]
+### [https://github.com/NYUCCL/psiTurk](https://github.com/NYUCCL/psiTurk)
+<img src="images/github.png" width="200">
+>>>>>>> Stashed changes
 
 PsiTurk completely takes care of the server side for you.
 
