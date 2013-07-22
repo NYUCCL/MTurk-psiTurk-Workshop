@@ -531,7 +531,7 @@ class: middle
 
 - In our experiments, a HIT is typically an entire experiment (as might be done in the lab)
  
-- However, it is up to the .orange[**Requester**] to determine what constitutes a HIT
+- However, it is up to the **Requester** to determine what constitutes a HIT
  
 - Could be one trial in an experiment, and you just offer the .blue[**Worker**] as many HITs as they care to do
  
@@ -548,7 +548,7 @@ class: middle
  
 3. Worker accepts a HIT.  The task appears in a frame within the AMT website.
 
-    - Accepting a HIT means it is removed from the .orange[**Requester**]'s account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
+3. Accepting a HIT means it is removed from the .orange[**Requester**] account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
 
 4. After completing the HIT, the worker signals to Amazon that they have completed the task
  
@@ -558,29 +558,9 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Search view
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Hit details 
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Ad view
-
+class: center, middle
+# Let's do a HIT
+ 
 
 ---
 
@@ -606,33 +586,13 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a project
-
- 
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a new batch
+class: center, middle
+# Let's request some HITs
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
-
-## Crediting participants
-
-
----
-
- 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
 
@@ -646,6 +606,7 @@ class: middle
 
 
 ---
+
 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
@@ -672,7 +633,7 @@ class: middle
      
     - Approving completed HITs for payment in a timely manner
      
-    - Dealing quickly with .blue[**Worker**] issues
+    - Dealing quickly with worker issues
      
     - Saving your data in a secure place, etc..
 
@@ -687,121 +648,29 @@ class: middle
 
     - Submit a request for HITs (through the Dashboard)
 
-    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group') .red[[1]]
+    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group')
 
-    - After HIT is accepted, provide a link to the experiment .red[[1]]
+    - After HIT is accepted, provide a link to the experiment
 
-    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT. .red[[2]]
+    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT.
 
-
+<!--
 .footnote[
 psiTurk hint .red[[1]]: see templates/mturkindex.html<br />
 psiTurk hint .red[[2]]: see templates/thanks.html
 ]
+-->
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_dashboard.png" width="750" />
+class: center, middle
+# psiTurk Dashboard
 
 
 ---
 
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_awsinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_database.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_server.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_hitconfig.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_expinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-- When participants see your HIT in the list, they will see basic metadata:
-
-<img src="images/listing.png" width="750" />
-
-- Once they click "View a HIT in this group," they see whatever your site is serving up, in our case this is the default:
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-## A Participant Accepts
-
-Upon accepting the HIT, they see... whatever you want them to see! In our case,
-it's this:
-
-The link to the site. Could be anything! Must link back to Amazon at the end (we'll show you how)
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-The last thing served to the participant is a button they can use to inform
-Amazon that they have finished the HIT. This submits a form with their
-identifying information to `http://www.mturk.com/mturk/externalSubmit`.
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-Error upon trying again.
-
-
----
 
 .task[Part 2. Using AMT]
 # Be a good requester
