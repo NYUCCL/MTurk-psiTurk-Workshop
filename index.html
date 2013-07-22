@@ -170,7 +170,7 @@ class: shortlist, middle
 
 3. Introduce the psiturk toolbox for making AMT-based web experiments as painless as possible
 
-(Get slides [here](https://github.com/NYUCCL/MTurkWorkshop_CogSci2013))
+Get slides here: [https://github.com/NYUCCL/MTurkWorkshop_CogSci2013](https://github.com/NYUCCL/MTurkWorkshop_CogSci2013) (bottom right: "download zip")
 ---
 
 name: whatisamt
@@ -282,7 +282,7 @@ Tamir (2011)
 - **Convenient**
     - And the psiTurk toolbox will help you even more
 - **Fast** 
-    - collect a lot of data quickly, also good for piloting
+    - Collect a lot of data quickly, also good for piloting
 - **Affordable**
     - Workers will sign up for $2.00 for 15-25 minute session
 - **Anonymous**
@@ -301,7 +301,7 @@ A few concerns have been raised abut AMT data:
 <br><br>
 
 - **Selection Bias:** No control over who takes the experiment
-    - Makes AMT sample probably less useful for research on ideology, or political attitudes (53% are self-identified liberals, 25% conservatives, 73% voted for Obama)
+    - Makes AMT sample probably less useful for research on ideology, or political attitudes (53% are self-identified liberals, 25% conservatives, 73% voted for Obama, see details [here](http://themonkeycage.org/2012/12/19/how-representative-are-amazon-mechanical-turk-workers/))
 
     - See [this](http://www.culturalcognition.net/blog/2013/7/10/fooled-twice-shame-on-who-problems-with-mechanical-turk-stud.html) blogpost for a discussion
 
@@ -390,7 +390,7 @@ name: replicationstudies
 
 
 .task[Part 1: What is AMT?]
-# Presentation Time
+# Stimulus Detection
 .left-column[ 
 
 Stroop
@@ -419,7 +419,7 @@ Flanker
 ---
 
 .task[Part 1: What is AMT?]
-# Presentation Time
+# Stimulus Detection
 .left-column[ 
 
 Simon
@@ -429,7 +429,7 @@ Simon
 
 Visual Cuing 
 
-  - Stimulus detection is faster for cued  versus uncued targets if cue is presented after short interval (~300ms) and slower after longer interval (~400ms)
+  - Stimulus detection is faster for cued  versus uncued targets if cue is presented after short interval (<=300ms) and slower after longer interval (>=400ms)
 
 Attentional Blink
 
@@ -464,7 +464,7 @@ Masked priming
 
   - Only partially replicated: no negative compatibility effect
 
-  - Possibility: Lower bound on display duration in browser?
+  - Lower bound on display duration in browser!
 
 ---
 
@@ -577,11 +577,12 @@ Including manipulation checks that asked non-trivial questions about the task im
 
 .task[Part 1: What is AMT?]
 # Be a good requester
- 
-Workers share information about good and bad requesters:
+- If your task breaks, workers *will* e-mail you!
+
+- They also share information about good and bad requesters:
 <br><br>
 .center[
-<img src="images/Turkopticon.png" height="400">
+<img src="images/Turkopticon.png" height="350">
 ]
  
 ---
@@ -1000,7 +1001,17 @@ Web development has a lot of moving parts:
     - Style defined in <span class="blue">CSS</span>.
     - Programs written in <span class="blue">Javascript</span>.
 
+<<<<<<< Updated upstream
 ???
+=======
+class: center, middle
+
+.task[Part 3: Building dynamic web experiments]
+# psiTurk
+### .gray[Our framework for doing online experiments]
+### [https://github.com/NYUCCL/psiTurk](https://github.com/NYUCCL/psiTurk)
+<img src="images/github.png" width="200">
+>>>>>>> Stashed changes
 
 PsiTurk completely takes care of the server side for you.
 
