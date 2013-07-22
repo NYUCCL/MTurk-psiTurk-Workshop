@@ -161,27 +161,6 @@ _Department of Psychology_
 _New York University_  
 ]
 
----
-
-name: overview
-
-# Overview
-
-1. What is [Amazon Mechanical Turk](https://www.mturk.com) (AMT)?  [Jump to this section](#whatisamt)
-    - Who are the people in the system (demographics, etc...)?
-    - How good is the data?
-
-2. Running dynamic experiments on AMT [Jump to this section](#part2)
-
-    - Show how to use the AMT website 
-    - Step through setting up an experiment using psiTurk 
-    
-3. Basics of running experiments in the lab [Jump to this section](#part3)
-
-    - Introduce a [simple Python-based web-app](https://github.com/NYUCCL/psiTurk) we developed which could be a starting framework for your experiment
-    - Using the AMT sandbox to develop and test your app
-    - Manage hits, using a browser-based dashboard 
-
 
 ---
 
@@ -196,7 +175,7 @@ class: shortlist, middle
 
 3. Introduce the psiturk toolbox for making AMT-based web experiments as painless as possible
 
-
+(Get slides [here](https://github.com/NYUCCL/MTurkWorkshop_CogSci2013))
 ---
 
 name: whatisamt
@@ -208,16 +187,15 @@ class: center, middle
 .task[Part 1: What is AMT?]
 # The history
 
-<img src="images/bezos.jpg" width="250" align="right"><br>
 
-
-- Developed by [Amazon.com](http://amazon.com) by Peter Cohen
+- Developed by [Amazon.com](http://amazon.com)
 
 - Originally for in-house use to detect duplicate product postings on Amazon's site .red[*]
 
-- Jeff Bezos calls it "artificial artificial intelligence"
+<br><br>
+.center[<img src="images/AMTLogo.png" width="300">
+]
 
-- Name originates from a mechanical chess illusion/automaton by Wolfgang von Kempelen in the 18th century
 
 
 .footnote[.red[*] Nice summary in the [New York Times](http://www.nytimes.com/2007/03/25/business/yourmoney/25Stream.html)]
@@ -255,15 +233,6 @@ class: shortlist, middle
     - Distribution mostly similar to US internet pop.
     
 - See Ipeirotis, et al. (2010) or Mason and Siddharth (2011).
-
----
-
-.task[Part 1: What is AMT?]
-# US Distribution
-
-<img src="images/us-turk-distribution.jpg" width="700">
-
-Taken from this [website](http://www-958.ibm.com/software/data/cognos/manyeyes/visualizations/geographic-distribution-of-turkers).
 
 ---
 
@@ -354,8 +323,8 @@ A few concerns have been raised abut AMT data:
 
     - Cross talk (e.g. in AMT forums) seems to be rare (workers share information about payment, duration, etc.)
 
-    - For specific studies repeated participation can be prevented by recording worker's IDs (see psiTurk sections)
-
+    - For specific studies repeated participation can be prevented by recording worker's IDs
+ - .blue[PsiTurk toolbox helps with this!]
 
 ---
 .task[Part 1: What is AMT?]
@@ -365,9 +334,9 @@ A few concerns have been raised abut AMT data:
       - 27% were not alone while working on the HIT
       - 18% were watching tv
       - 14% were listening to music
-      - 55% were monitoring other requesters at the same time
 
-    - Recording how often participants change windows/take breaks might help clean data (again, see psiTurk section)
+    - Recording how often participants change windows/take breaks might help clean data
+  - .blue[PsiTurk toolbox helps with this!]
 
     - Still, the lack of experimental control over a worker's environment might make some studies unsuitable for AMT
 
@@ -377,10 +346,7 @@ A few concerns have been raised abut AMT data:
 
 class: center, middle
 
-# How does the data compare to that collected in the lab? .red[*]
-
-
-.left.footnote[.red[*]Check out our discussion of this at our [Thinking about Thinking](http://gureckislab.org/blog/) blog ]
+# How does the data compare to that collected in the lab?
 
 
 ---
@@ -429,12 +395,12 @@ name: replicationstudies
 
 
 .task[Part 1: What is AMT?]
-# RT Results
+# Presentation Time
 .left-column[ 
 
 Stroop
 
-  - People respond faster to congruent (e.g. .blue[blue]) than to incongruent (.red[blue]) items
+  - People respond faster to congruent (e.g. .blue[blue]) than to incongruent (.green[blue]) items
 
 
 Task Switching
@@ -458,7 +424,7 @@ Flanker
 ---
 
 .task[Part 1: What is AMT?]
-# RT Results
+# Presentation Time
 .left-column[ 
 
 Simon
@@ -639,6 +605,17 @@ A few recommendations to keep workers happy...
 1. If something goes wrong, provide an .blue[alternative payment method] for workers who are unable to finish or submit HIT
     - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
  
+
+---
+
+class: center, middle
+
+.task[Part 1: What is AMT?]
+
+# End of .blue[Part 1]
+Questions?
+
+
 
 ---
 
@@ -977,7 +954,7 @@ Error upon trying again.
 
 
 class: center, middle
-# End of Part 2
+# End of .blue[Part 2]
 ### .gray[Time for a break!]
  
 
