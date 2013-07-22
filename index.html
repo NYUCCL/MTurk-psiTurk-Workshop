@@ -1141,7 +1141,8 @@ PsitTurk.js will .blue[automatically]:
 # psiturk.js: <br> .blue[Condition and Counterbalance]
 
 ```javascript
-exp = new Psiturk() // Put this at the top of your file!
+// Put this at the top of your file:
+exp = new Psiturk() 
 
 // returns subect's server-assigned condition:
 exp.taskdata.get("condition")
@@ -1171,8 +1172,9 @@ exp.getImage("myimage.jpg")
 exp = new Psiturk()
 
 // Records data for the current trial
-exp.recordTrialData([1, "L", "CORRECT"]) 
-// Records data for the current trial
+// A list of things which will be put in columns in the spreadsheet
+exp.recordTrialData(["anything", "you", "decide", 1, "L", "CORRECT"]) 
+// Unstructured data, e.g. the answer to a question in a form
 exp.recordUnstructuredData("Age", 28) 
 
 // Save data to server
@@ -1182,7 +1184,7 @@ exp.saveData()
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# Full API doc for reference:
+# psiturk.js: .blue[API reference]
 
 - `psiturk.taskdata` — Data about task/subject
     - `.get("condition")` — Get server-assigned condition number
