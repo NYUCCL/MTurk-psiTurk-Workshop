@@ -3,11 +3,9 @@
   <head>
     <title>Using Mechanical Turk for Cognition Experiments - John McDonnell and Todd Gureckis</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <style rel="stylesheet" href="styles/monokai.css">
     <style type="text/css" media="screen">
     /* Slideshow styles */
       @import url(http://fonts.googleapis.com/css?family=Lobster);
-      @import url(http://fonts.googleapis.com/css?family=Open+Sans);
       @import url(http://fonts.googleapis.com/css?family=Oxygen);
       
       body { 
@@ -993,150 +991,189 @@ class: center, middle
 .task[Part 3: Building dynamic web experiments]
 # Programming for the web:<br> .blue[The Good]
 
-- Take advantage of all the perks of online experiments (as discussed in part 1)
+- Web programming was developed specifically for user interaction.
 - Web experiments will run in the lab too!
-- There is a vast amount of open source software available for customizing websites for your specific needs and a large community to help out
+- Tons of existing resources, both .blue[libraries] and .blue[tutorials].
 
 ---
 
 .task[Part 3: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
-To get your experiment up and running on AMT you need to:
+Web development has a lot of moving parts:
 
-- Host it on your own server
-- Post the advertisement and request for subjects to Amazon's servers.
-- Communicate with Amazon when a HIT has been completed
-- Save the data 
-- Become a web developer
-
----
-
-.task[Part 3: Building dynamic web experiments]
-# Programming for the web: Luckily...
-
-The psiTurk toolbox takes care of most of this! 
-
----
-
-class: center, middle
-
-.task[Part 3: Building dynamic web experiments]
-# psiTurk
-### .gray[Our framework for doing online experiments]
-### [https://github.com/NYUCCL/psiTurk](https://github.com/NYUCCL/psiTurk)
-<img src="images/psiturk_logo_cloud_2l.png" width="300">
-<img src="images/github.png" width="200">
-
+- .blue[Custom web server] to serve the experiment and interact with Amazon.
+- .blue[Database] for the server to store data.
+- The actual .blue[web page]:
+    - Structure coded in <span class="blue">HTML</span>.
+    - Style defined in <span class="blue">CSS</span>.
+    - Programs written in <span class="blue">Javascript</span>.
 
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# What does psiTurk do for you?
+# Programming for the web: <br>.blue[The Challenge]
 
-- Runs a .blue[**webserver**] to host your experiment
+Web development has a lot of moving parts:
 
-- Provides a .blue[**local database**] to 
-    - Store data incrementally while a worker completes a HIT
-    - Allow you to verify that workers have not participated in your experiment before
+- .blue[Custom web server] to serve the experiment and interact with Amazon. ✓ 
+- .blue[Database] for the server to store data. ✓ 
+- The actual .blue[web page]:
+    - Structure coded in <span class="blue">HTML</span>.
+    - Style defined in <span class="blue">CSS</span>.
+    - Programs written in <span class="blue">Javascript</span>.
 
-- Handles your .blue[**interactions with Amazon**], including...
-    
-    - Managing your HITs
-    - Launching experiments as external HIT
-    - Communicating back to AMT when job is done
-    - Facilitates paying workers after completing a HIT
+???
 
-- Provides a browser based .blue[**user-interface**] (dashboard) that lets you do all of this without the need to use the command line
-
-- Includes a library of .blue[**useful Javascript functions**] for structuring your experiment, as well as a simple .blue[**example experiment**] that can be used as a template
-
-.left[*NB: Except for the Amazon functionalities, all other parts of psiturk are useful for deploying web experiments in general!*]
-
+PsiTurk completely takes care of the server side for you.
 
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# What does it NOT for you?
+# Programming for the web: <br>.blue[The Challenge]
 
-- Even though psiTurk provides code examples and useful functions, you will still need to learn some basic web programming to design your experiment
+Web development has a lot of moving parts:
 
-- That requires some knowledge of at least the following:
-    - .blue[**HTML**] 
-    - .blue[**CSS**]
-    - .blue[**Javascript**], and .blue[**JQuery**] (a JS library)
+- .blue[Custom web server] to serve the experiment and interact with Amazon. ✓ 
+- .blue[Database] for the server to store data. ✓ 
+- The actual .blue[web page]:
+    - Structure coded in <span class="blue">HTML</span> (`exp.html`).✓ 
+    - Style defined in <span class="blue">CSS</span> (`task.css`). ✓ 
+    - Programs written in <span class="blue">Javascript</span>.
 
-- Luckily, there exist a LOT of resources for learning to program for the web, e.g.
-    - Codeacademy turorials on [Web Fundamentals](http://www.codecademy.com/tracks/web) (HTML and CSS), [JavaScript](http://www.codecademy.com/tracks/javascript), and [JQuery](http://www.codecademy.com/tracks/jquery)
-    - [Introduction to Web development](https://developer.mozilla.org/en-US/docs/Web_Development/Introduction_to_Web_development) resources from the Mozilla  Developer Network
-    - The [Stackoverflow](http://stackoverflow.com) community will have answers to 99% of amateur web programming questions
+???
 
-
-This may seem overwhelming at first, but after a steep learning curve, blah blah, some motivational statement...
-
+We also provide default html and stylesheet files which you could potentially
+leave as they are.
 
 ---
 
+.task[Part 3: Building dynamic web experiments]
+# Programming for the web: <br>.blue[The Challenge]
+
+Web development has a lot of moving parts:
+
+- .blue[Custom web server] to serve the experiment and interact with Amazon. ✓ 
+- .blue[Database] for the server to store data. ✓ 
+- The actual .blue[web page]:
+    - Structure coded in <span class="blue">HTML</span> (`exp.html`).✓ 
+    - Style defined in <span class="blue">CSS</span> (`task.css`). ✓ 
+    - Programs written in <strong><span class="red">Javascript</span></strong>.
+
+???
+But it's your job to code up the experiment, and you'll have to do that in
+Javascript.
+
+---
 
 .task[Part 3: Building dynamic web experiments]
-# JavaScript
+# What is JavaScript?
 
-**What?**  
+- For one thing, it has .blue[nothing to do] with Java.
+- It is the .blue[only language] that browsers understand natively 
+    - (but flash is also an option).
+- These slides were compiled in Javascript!
+- Javascript's role in a behavioral experiment:
+    - Control the <span class="blue">task logic</span>: condition, etc.
+    - Control <span class="blue">what subjects see</span> and when.
+    - Collect and store <span class="blue">data</span>, then send it to the server.
 
-- Most likely, JavaScript will be the main work horse of your web experiment
-- It is a language that browsers can understand to make websites dynamic
-- It will control the logic of your task, handle communication with the server, etc.
+---
 
-
-**Can Dos (for cognitive experiments)**  
+.task[Part 3: Building dynamic web experiments]
+# What Javascript can do
 
 - Interact with a web server (to send or request data for instance)
 - Track clicks, mouse movements, etc.
 - Record response times
 - Track changes in focus and window size
-- Enable group experiments (via web sockets)
+- Enable group experiments
 
+---
 
-**Can't Dos**  
+.task[Part 3: Building dynamic web experiments]
+# What Javascript can't do
 
 - Control focus (lock participants in a window)
 - Disable browser actions (reloading, going back)
 - Saving directly to a file (server interaction is required)
 
+---
+
+.task[Part 3: Building dynamic web experiments]
+# Learning Javascript
+
+Lots of resources for learning: E.g., [codecademy.com](http://codecademy.com):
+
+<img src="images/codecademy.png" width="750" />
+
+???
+
+No time to teach javascript
+
+One of the most commonly used languages.
+
+One resource I recommend for beginners is codecademy.
+
+Doesn't assume programming experimence.
+
+Guides you through Javascript interactively.
 
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# PsiTurk JS functions
+# psiturk.js: <br> .blue[A Javascript API]
 
-To help you get started to build your experiment we included a small library that will help you do the following:
+A small library that will help you:
 
-- Handle page transition
+- Handle page transitions
 - Load images
-- Register if user resizes their Window
-- Register if user switches to another tab/window
 - Record and save data
 
+PsitTurk.js will .blue[automatically]:
+
+- Register if user resizes their Window
+- Register if user switches to another tab/window
+
 ---
 
 .task[Part 3: Building dynamic web experiments]
-# The Psiturk javascript object
+# psiturk.js: <br> .blue[Condition and Counterbalance]
 
-Some of the important Javascript functions we provide:
+```javascript
+exp = new Psiturk() // Put this at the top of your file!
+
+// returns subect's server-assigned condition:
+exp.taskdata.get("condition")
+// returns subect's server-assigned condition:
+exp.taskdata.get("counterbalance") 
+```
+
+---
+
+.task[Part 3: Building dynamic web experiments]
+# psiturk.js: <br> .blue[Fetching resources]
 
 ```javascript
 exp = new Psiturk()
 
-// Handling experiment info: 
-exp.taskdata.get("condition") // returns subect's server-assigned condition
-exp.taskdata.get("counterbalance") // returns subect's server-assigned condition
+// Returns HTML from mypage.html, 
+// stored in the templates directory
+exp.getPage("mypage.html") 
+exp.getImage("myimage.jpg") 
+```
+---
 
-// Handling resources:
-exp.getPage("mypage.html") // Returns HTML from mypage.html, stored in the templates directory
+.task[Part 3: Building dynamic web experiments]
+# psiturk.js: <br> .blue[Recording and saving data]
 
-// Recording subjects' responses
-exp.recordTrialData([1, "L", "CORRECT"]) // Records data for the current trial
-exp.recordUnstructuredData("Age", 28) // Records data for the current trial
+```javascript
+exp = new Psiturk()
+
+// Records data for the current trial
+exp.recordTrialData([1, "L", "CORRECT"]) 
+// Records data for the current trial
+exp.recordUnstructuredData("Age", 28) 
 
 // Save data to server
 exp.saveData()
@@ -1145,11 +1182,32 @@ exp.saveData()
 ---
 
 .task[Part 3: Building dynamic web experiments]
+# Full API doc for reference:
+
+- `psiturk.taskdata` — Data about task/subject
+    - `.get("condition")` — Get server-assigned condition number
+    - `.get("counterbalance")` — Get server-assigned counterbalance number
+    - `.get("useragent")` — Get browser's user agent string.
+    - *Includes event listeners to record resize/focus change.*
+- `psiturk.getPage` — Retrieve html snippet from `/templates` directory.
+- `psiturk.getImage` — Retrieve image from `/static/images` directory.
+- `psiturk.recordTrialData` — Accepts list of items, which will be a row in `trialdata.csv` along with the subject's unique identifier
+- `psiturk.recordUnstructuredData` — Accepts `key` followed by `value`, encoded along with unique identifier in `questiondata.csv`
+- `psiturk.saveData` — Send all data in `taskdata` to the server.
+- `psiturk.finishInstructions` — Warn participants not to close window.
+- `psiturk.teardownTask` — Allow window to close.
+
+
+---
+
+.task[Part 3: Building dynamic web experiments]
 # Javascript libraries
 
-- .blue[**Jquery**] -- Manipulating the website
-- .blue[**BackboneJS**] -- Organizing your code
-- .blue[**Underscore**] -- Helpful functions, e.g. `_.shuffle()` to shuffle stimuli
+These are currently dependencies of `psiturk.js`, we also use them in all our experiments.
+
+- [Jquery](http://jquery.org) – Manipulating the website
+- [BackboneJS](http://backbonejs.org) – Organizing your code
+- [UnderscoreJS](http://underscorejs.org) – Helpful functions, e.g. `_.shuffle()` to shuffle stimuli
 
 <!-- ---
 
