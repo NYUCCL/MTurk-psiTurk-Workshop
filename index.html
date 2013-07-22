@@ -658,7 +658,7 @@ class: middle
 
 - In our experiments, a HIT is typically an entire experiment (as might be done in the lab)
  
-- However, it is up to the .orange[**Requester**] to determine what constitutes a HIT
+- However, it is up to the **Requester** to determine what constitutes a HIT
  
 - Could be one trial in an experiment, and you just offer the .blue[**Worker**] as many HITs as they care to do
  
@@ -675,7 +675,7 @@ class: middle
  
 3. Worker accepts a HIT.  The task appears in a frame within the AMT website.
 
-    - Accepting a HIT means it is removed from the .orange[**Requester**]'s account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
+3. Accepting a HIT means it is removed from the .orange[**Requester**] account. If the Worker decides not to complete the HIT, they have to _return_ it to the .orange[**Requester**] so someone else can do it
 
 4. After completing the HIT, the worker signals to Amazon that they have completed the task
  
@@ -685,29 +685,9 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Search view
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Hit details 
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .blue[**Worker**] 
-
-## Ad view
-
+class: center, middle
+# Let's do a HIT
+ 
 
 ---
 
@@ -723,9 +703,9 @@ class: middle
     - Workers ***will*** contact you when they have issues
     - Need a way to deal with this efficiently and quickly (your reputation depends on it!)
      
-1. Use the built-in Amazon template or "External Question" approach to design your experiment
+1. Use a built-in Amazon template or "External Question" approach to design your experiment
  
-1. Test your code on the "sandbox" website before going live
+1. Test your code on the "sandbox"
  
 1. Go live! 
  
@@ -733,33 +713,13 @@ class: middle
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a project
-
- 
----
-
-
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
- 
-## Creating a new batch
+class: center, middle
+# Let's request some HITs
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# Using AMT as a .orange[**Requester**]
-
-## Crediting participants
-
-
----
-
- 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
 
@@ -773,6 +733,7 @@ class: middle
 
 
 ---
+
 
 .task[Part 2: Using AMT]
 # AMT's built-in question templates
@@ -799,7 +760,7 @@ class: middle
      
     - Approving completed HITs for payment in a timely manner
      
-    - Dealing quickly with .blue[**Worker**] issues
+    - Dealing quickly with worker issues
      
     - Saving your data in a secure place, etc..
 
@@ -814,121 +775,29 @@ class: middle
 
     - Submit a request for HITs (through the Dashboard)
 
-    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group') .red[[1]]
+    - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group')
 
-    - After HIT is accepted, provide a link to the experiment .red[[1]]
+    - After HIT is accepted, provide a link to the experiment
 
-    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT. .red[[2]]
+    - After HIT is complete, provide a button Worker will click to inform Amazon that they have finished. This submits a form with their identifying information to AMT.
 
-
+<!--
 .footnote[
 psiTurk hint .red[[1]]: see templates/mturkindex.html<br />
 psiTurk hint .red[[2]]: see templates/thanks.html
 ]
+-->
 
 
 ---
 
 
-.task[Part 2: Using AMT]
-# External questions
-
-- When participants see your HIT in the list, they will see basic metadata:
-
-<img src="images/listing.png" width="750" />
-
-- Once they click "View a HIT in this group," they see whatever your site is serving up, in our case this is the default:
+class: center, middle
+# psiTurk Dashboard
 
 
 ---
 
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_dashboard.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_awsinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_database.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_server.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_hitconfig.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# Creating a HIT with psiTurk
-
-<img src="images/screenshot_expinfo.png" width="750" />
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-## A Participant Accepts
-
-Upon accepting the HIT, they see... whatever you want them to see! In our case,
-it's this:
-
-The link to the site. Could be anything! Must link back to Amazon at the end (we'll show you how)
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-The last thing served to the participant is a button they can use to inform
-Amazon that they have finished the HIT. This submits a form with their
-identifying information to `http://www.mturk.com/mturk/externalSubmit`.
-
-
----
-
-
-.task[Part 2: Using AMT]
-# External questions
-
-Error upon trying again.
-
-
----
 
 .task[Part 2. Using AMT]
 # Be a good requester
@@ -1261,9 +1130,11 @@ class: center, middle
   - If you installed Python using Enthought you don't need to install pip separately. If you want to use another version of Python, you may have to install pip, for example like this:
 
 
-    .bash
-    curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-    [sudo] python get-pip.py
+
+```bash
+curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+[sudo] python get-pip.py
+```
 
 
 
@@ -1271,11 +1142,9 @@ class: center, middle
 
 - To install psiTurk simply run:
 
-
-    .bash
-    pip install git+git://github.com/NYUCCL/psiTurk.git@dev
-
-    (should be on master branch by workshop)
+```bash
+pip install git+git://github.com/NYUCCL/psiTurk.git@dev
+```
 
 ---
 
@@ -1285,33 +1154,27 @@ class: center, middle
 
 # Running the Stroop demo
 
-***Goal***
+***Goals***
 
-- Post a HIT on AMT.
+- Post a HIT.
+- Use demo code as the basis for a new project
 
 
-**1. Sign up for [AWS account](http://aws.amazon.com/) **
+**1. Check out the demo repository**
 
-**2. Check out the demo repository**
-
-    .bash
-    git clone git://github.com/NYUCCL/psiTurk.git
+```bash
+git clone git://github.com/NYUCCL/psiTurk.git
+```
 
 - or download it as a [zip file](https://github.com/NYUCCL/psiTurk/archive/master.zip).
 - You can modify this experiment to create your own.
 
 
-**3. Move into the repository**
+**2. Move into the demo repository**
 
-    .bash
-    cd psiturk
-
-
-**4.Start the dashboard**
-
-    .bash
-    psiturk
-
+```bash
+cd psiturk
+```
 
 ---
 
@@ -1320,21 +1183,18 @@ class: center, middle
 
 # Modifying the Stroop task
 
-***Goal***
-
-- Use our demo code as the base for a new project
+**3.Launch psiturk**
 
 
-** Directory structure **
-
-- psiTurk expects to find files in certain places
-- You'll spend most of your time in the static folder
-- /static
-    - task.js (logic)
-    - task.css (appearance)
+```bash
+psiturk
+```
 
 
-** Let's get our hands dirty...**
+<br>
+** Now, Let's get our hands dirty!**
+
+- hands-on dashboard and code demo
 
 
 ---
