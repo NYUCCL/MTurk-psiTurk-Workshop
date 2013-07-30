@@ -6,7 +6,6 @@
     <style type="text/css" media="screen">
     /* Slideshow styles */
       @import url(http://fonts.googleapis.com/css?family=Lobster);
-      @import url(http://fonts.googleapis.com/css?family=Bitter);
       @import url(http://fonts.googleapis.com/css?family=Oxygen);
       
       body { 
@@ -156,7 +155,6 @@ _New York University_
 
 
 ---
-
 name: goals
 class: shortlist, middle
 
@@ -167,10 +165,6 @@ class: shortlist, middle
 2. Discuss the capabilities and limits of web-based experiments
 
 3. Introduce the psiturk toolbox for making AMT-based web experiments as painless as possible
-
-Get slides here: [nyuccl.org/pages/mtworkshop2](http://nyuccl.org/pages/mtworkshop2) 
-
-...or on [github](http://github.com/NYUCCL/MTurkWorkshop_CogSci2013) (bottom right: "download zip")
 
 ---
 
@@ -306,7 +300,7 @@ A few concerns have been raised abut AMT data:
 
     - See [this](http://www.culturalcognition.net/blog/2013/7/10/fooled-twice-shame-on-who-problems-with-mechanical-turk-stud.html) blogpost for a discussion
 
-    - On the other hand, 20 year old university students are a very "special" sample too!
+    - On the other hand, 20 year old university students are a very special sample too!
 
 ---
 .task[Part 1: What is AMT?]
@@ -377,7 +371,6 @@ name: replicationstudies
 
     - Crump, M. J., McDonnell, J. V., & Gureckis, T. M. (2013). [Evaluating Amazon's Mechanical Turk as a tool for experimental behavioral research.](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0057410) PloS one, 8(3).
 
-- The goal was to see if classic findings replicate and also check what methods might help increase the quality of the data
 
 - Focus was on reaction time findings that require sustained attention from subjects and precise recording of responses
 
@@ -521,24 +514,6 @@ Including manipulation checks that asked non-trivial questions about the task im
 <img src="images/exp10-n-vs-amt.png" height="310">
 <img src="images/exp10-l-vs-amt.png" height="310">
 
----
-
-
-.task[Part 1: What is AMT?]
-# Summary
-
-- Important outcomes
-    - Most findings replicated with high fidelity
-
-    - But experiments that rely on very precise and fast stimulus presentation may reach the limit of most browsers
-
-    - Payment didn't have much effect on performance but did affect signup and dropout rates
-
-    - Checking participants' understanding of the task increased data quality considerably
-    
-<!-- - Note: dropout rates are much higher than in the lab, so maybe consider reporting those if they might interact with performance
- -->
-
 
 ---
 
@@ -593,7 +568,7 @@ Including manipulation checks that asked non-trivial questions about the task im
  
 A few recommendations to keep workers happy...
 
-1. Before running, test your experiments on .blue[different browsers] and the sandbox (AMT's testing environment)
+1. Before running, .blue[test your experiment] on different browsers and the sandbox (AMT's testing environment)
 
 1. Give explicit instructions and .blue[show warnings] about closing the page, going back in the browsers, etc.
 
@@ -602,8 +577,34 @@ A few recommendations to keep workers happy...
 1. If something goes wrong, provide an .blue[alternative payment method] for workers who are unable to finish or submit HIT
     - One way of doing this is to provide a HIT with no content specifically aimed at workers that had problems and pay them using a "bonus"
  
+---
+
+
+.task[Part 1: What is AMT?]
+# Part 1: Summary
+
+1. AMT  allows you to collect data quickly and conveniently
+
+1. Web experiments can prevent experimenter effects and increase anonymity
+
+1. Many classic psychology findings replicate with high fidelity
+    - But  it's important to check for browser limits regarding presentation time, etc.
+
+    - It's also helpful to check participants' understanding of the task
+
+1. Changing payment does not have a large effect performance but does affect signup and dropout rates
+
+1. Make sure to build up a good reputation with AMT workers to make your life easier
+
+    
+<!-- - Note: dropout rates are much higher than in the lab, so maybe consider reporting those if they might interact with performance
+ -->
+
+
 
 ---
+
+
 
 class: center, middle
 
