@@ -826,17 +826,187 @@ class: center, middle
 
 ---
 
+
 name: part3
 class: center, middle
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 3: Using psiTurk]
+# .blue[Part 3]: Using psiTurk
 
-# .blue[Part 3]: Building dynamic web experiments
+---
+
+
+.task[Part 3: Using psiTurk]
+# Installation
+
+**System requirements **
+
+- psiTurk works only on OS X and Linux. Windows is not supported (cloud-based option coming soon!).
+
+<br>
+**Software dependencies**    
+
+- **Python**
+
+  - If you've never used Python before, we recommend you use the [Enthought Python distribution](http://www.enthought.com/repo/.epd_academic_installers), 
+  because it comes with pip, a tool for easily installing Python packages. 
+
+  <br>
+  <br>
+
+---
+
+.task[Part 3: Using psiTurk]
+# Installation
+
+
+**Software dependencies**
+
+- **pip** (open source app store for Python)
+
+  - If you installed Python using Enthought you don't need to install pip separately.
+    If you want to use another version of Python, you may have to install pip, for example like this:
+
+
+
+```bash
+cd /tmp
+curl -O 'https://raw.github.com/pypa/pip/\
+master/contrib/get-pip.py'
+python get-pip.py 
+# If you get a permissions error, try
+# sudo python get-pip.py
+```
+
+---
+
+.task[Part 3: Using psiTurk]
+
+**3. Installing psiTurk**
+
+- To install psiTurk simply run:
+
+```bash
+pip install psiturk
+# If you get a permissions error try
+# sudo pip install psiturk
+```
+
+---
+
+.task[Part 3: Using psiTurk]
+
+# The 3 components of psiTurk
+
+**1. Experiment server**
+
+  - Hosts lab and web experiments
+
+
+**2. Dashboard **
+
+- Interface for Amazon
+  - post ads, pay workers, change settings, etc.
+- Test suite
+  - launch and debug code
+
+
+**3. Javascript library**
+
+- Provides common experiment functionality
+  - save data to server
+  - load consent, debriefing, and quality control forms
+  - and much more (see next section)
+
 
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 3: Using psiTurk]
+
+ # Work flow
+
+**1. Local testing &amp; debugging**
+
+  - Test experiment locally
+  - Javascript (expt logic) &larr;&rarr; dashboard  &larr;&rarr;  expt server
+
+
+**2. Remote testing (AMZ sandbox)**
+
+  - Test that your code works on Amazon's servers
+  - Javascript &larr;&rarr; dashboard  &larr;&rarr;  expt server &larr;&rarr; AMZ
+
+
+**3. Live (AMZ)**
+
+  - Collect data!
+  - Javascript &larr;&rarr; dashboard  &larr;&rarr;  expt server  &larr;&rarr; AMZ
+
+---
+
+
+.task[Part 3: Using psiTurk]
+
+# Running the Stroop demo
+
+***Goals***
+
+- Test locally
+- Post a HIT in AMZ sandbox.
+
+
+**1. Load demo experiment code**
+
+```bash
+psiturk-setup-example
+```
+
+**2. Start dashboard**
+
+```bash
+psiturk
+```
+
+**3. Dashboard overview** (in browser demo)
+---
+
+
+
+.task[Part 3: Using psiTurk]
+
+# Modifying the Stroop task
+
+<br>
+** Now, let's get our hands dirty!**
+
+- Data entry and export
+- Should code editing wait until Part 4?
+
+---
+
+
+.task[Part 3: Using psiTurk]
+
+# Summary
+
+- blah
+- more important blah
+
+
+---
+
+
+name: part4
+class: center, middle
+
+.task[Part 4: Building dynamic web experiments]
+# .blue[Part 4]: Building dynamic web experiments
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web:<br> .blue[The Good]
 
 - Web programming was developed specifically for user interaction.
@@ -845,7 +1015,7 @@ class: center, middle
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
 Web development has a lot of moving parts:
@@ -859,7 +1029,7 @@ Web development has a lot of moving parts:
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
 Web development has a lot of moving parts:
@@ -877,7 +1047,7 @@ PsiTurk completely takes care of the server side for you.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
 Web development has a lot of moving parts:
@@ -896,7 +1066,7 @@ leave as they are.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
 ```bash
@@ -909,7 +1079,7 @@ psiturk-setup-example
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
 Web development has a lot of moving parts:
@@ -927,7 +1097,7 @@ Javascript.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # What is JavaScript?
 
 - For one thing, it has .blue[nothing to do] with Java.
@@ -941,7 +1111,7 @@ Javascript.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # What Javascript .blue[can] do
 
 - Interact with a web server (to send or request data for instance)
@@ -952,7 +1122,7 @@ Javascript.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # What Javascript .blue[can't] do
 
 - Control focus (lock participants in a window)
@@ -961,7 +1131,7 @@ Javascript.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Learning Javascript
 
 Lots of resources for learning: E.g., [codecademy.com](http://codecademy.com):
@@ -982,7 +1152,7 @@ Guides you through Javascript interactively.
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[A Javascript API]
 
 A small library that will help you:
@@ -998,7 +1168,7 @@ PsitTurk.js will .blue[automatically]:
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[Condition and Counterbalance]
 
 ```javascript
@@ -1013,7 +1183,7 @@ exp.taskdata.get("counterbalance")
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[Fetching resources]
 
 ```javascript
@@ -1026,7 +1196,7 @@ exp.getImage("myimage.jpg")
 ```
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[Recording and saving data]
 
 ```javascript
@@ -1044,7 +1214,7 @@ exp.saveData()
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: .blue[API reference]
 
 - `psiturk.taskdata` — Data about task/subject
@@ -1063,7 +1233,7 @@ exp.saveData()
 
 ---
 
-.task[Part 3: Building dynamic web experiments]
+.task[Part 4: Building dynamic web experiments]
 # Javascript libraries
 
 These are currently dependencies of `psiturk.js`, we also use them in all our experiments.
@@ -1094,114 +1264,6 @@ These are currently dependencies of `psiturk.js`, we also use them in all our ex
 
 ---
 
-
-name: part4
-class: center, middle
-
-.task[Part 3: Using psiTurk]
-# .blue[Part 4]: Using psiTurk
-
----
-
-
-.task[Part 4: Using psiTurk]
-# Installation
-
-**1. System requirements **    
-
-- psiTurk works only on OS X and Linux, Windows is not supported (cloud-based option coming soon!).
-
-<br>
-**2. Software dependencies**    
-
-- **Python**
-
-  - If you've never used Python before, we recommend you use the [Enthought Python distribution](http://www.enthought.com/repo/.epd_academic_installers), 
-  because it comes with pip, a tool for easily installing Python packages. 
-
-  <br>
-  <br>
-
----
-
-
-.task[Part 4: Using psiTurk]
-# Installation Con't
-
-
-**2. Software dependencies con't**    
-
-- **pip**
-
-  - If you installed Python using Enthought you don't need to install pip separately. If you want to use another version of Python, you may have to install pip, for example like this:
-
-
-
-```bash
-curl -O \
-https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-[sudo] python get-pip.py
-```
-
-
-
-**3. Installing psiTurk**
-
-- To install psiTurk simply run:
-
-```bash
-pip install git+git://github.com/NYUCCL/psiTurk.git@dev
-```
-
----
-
-
-
-.task[Part 4: Using psiTurk]
-
-# Running the Stroop demo
-
-***Goals***
-
-- Post a HIT.
-- Use demo code as the basis for a new project
-
-
-**1. Check out the demo repository**
-
-```bash
-git clone -b dev git://github.com/NYUCCL/psiTurk.git
-```
-
-- or download it as a [zip file](https://github.com/NYUCCL/psiTurk/archive/master.zip).
-
-**2. Move into the demo repository**
-
-```bash
-cd psiturk
-```
-
----
-
-
-.task[Part 4: Using psiTurk]
-
-# Modifying the Stroop task
-
-**3.Launch psiturk**
-
-
-```bash
-psiturk
-```
-
-
-<br>
-** Now, let's get our hands dirty!**
-
-- Hands-on dashboard and code demo
-
-
 ---
 
 
@@ -1220,3 +1282,5 @@ class: middle, center
     </script>
   </body>
 </html>
+
+
