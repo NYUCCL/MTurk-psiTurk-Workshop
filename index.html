@@ -107,6 +107,9 @@
           font-size: 15px;
       }
       
+      .small {
+          font-size: 20px;
+      }
       .smallquote {
           font-size: 14px;
       }
@@ -1361,7 +1364,7 @@ static
 | css
 | \ task.css
 | js  # <--- Javascript
-| | psiturk.js # <--- Our library
+| | psiturk.js
 | | task.js # <---  Our task!
 | \ utils.js
 \ lib
@@ -1429,6 +1432,35 @@ Guides you through Javascript interactively.
 ---
 
 .task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static 
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js # <--- Library for communicating with psiturk server
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[A Javascript API]
 
 A small library that will help you:
@@ -1460,19 +1492,6 @@ exp.taskdata.get("counterbalance")
 ---
 
 .task[Part 4: Building dynamic web experiments]
-# psiturk.js: <br> .blue[Fetching resources]
-
-```javascript
-exp = new Psiturk()
-
-// Returns HTML from mypage.html, 
-// stored in the templates directory
-exp.getPage("mypage.html") 
-exp.getImage("myimage.jpg") 
-```
----
-
-.task[Part 4: Building dynamic web experiments]
 # psiturk.js: <br> .blue[Recording and saving data]
 
 ```javascript
@@ -1490,6 +1509,8 @@ exp.saveData()
 
 ---
 
+class: small
+
 .task[Part 4: Building dynamic web experiments]
 # psiturk.js: .blue[API reference]
 
@@ -1498,8 +1519,6 @@ exp.saveData()
     - `.get("counterbalance")` — Get server-assigned counterbalance number
     - `.get("useragent")` — Get browser's user agent string.
     - *Includes event listeners to record resize/focus change.*
-- `psiturk.getPage` — Retrieve html snippet from `/templates` directory.
-- `psiturk.getImage` — Retrieve image from `/static/images` directory.
 - `psiturk.recordTrialData` — Accepts list of items, which will be a row in `trialdata.csv` along with the subject's unique identifier
 - `psiturk.recordUnstructuredData` — Accepts `key` followed by `value`, encoded along with unique identifier in `questiondata.csv`
 - `psiturk.saveData` — Send all data in `taskdata` to the server.
@@ -1549,13 +1568,18 @@ These are currently dependencies of `psiturk.js`, we also use them in all our ex
 
 ---
 
+# To review...
+
+- Web programming involves building a web page in .blue[html], .blue[css], .blue[javascript].
+- PsiTurk provides a .blue[template] to get you started.
+- .blue[psiturk.js] also gives you tools to communicate with the server for counterbalancing information and recording data.
+
+
 ---
-
-
 
 class: middle, center
 
-# Thanks!
+# Let's see an example...
 
 
     </textarea>
