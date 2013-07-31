@@ -8,7 +8,7 @@
       @import url(http://fonts.googleapis.com/css?family=Lobster);
       @import url(http://fonts.googleapis.com/css?family=Oxygen);
       
-      body { 
+      body {
         font-family: 'Oxygen', sans-serif;
         font-size: 24px;
       }
@@ -18,7 +18,7 @@
           font-weight: normal;
           font-size: 55px;
       }
-      h2 {
+      h3 {
       }
       li {
         margin-bottom: 15px;
@@ -120,6 +120,7 @@
         -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
+        font-size: 20px;
       }
 
 
@@ -132,10 +133,6 @@
       .right-column {
         width: 30%;
         float: right;
-      }
-      
-      #slideshow .slide .content code { font-size: 11px;
-        
       }
    </style>
   </head>
@@ -1070,19 +1067,6 @@ leave as they are.
 .task[Part 4: Building dynamic web experiments]
 # Programming for the web: <br>.blue[The Challenge]
 
-```bash
-psiturk-setup-example
-```
-<img src="images/hierarchy.png" height="400" />
-
-???
-
-
----
-
-.task[Part 4: Building dynamic web experiments]
-# Programming for the web: <br>.blue[The Challenge]
-
 Web development has a lot of moving parts:
 
 - .blue[Custom web server] to serve the experiment and interact with Amazon. ✓ 
@@ -1095,6 +1079,330 @@ Web development has a lot of moving parts:
 ???
 But it's your job to code up the experiment, and you'll have to do that in
 Javascript.
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+psiturk-setup-example
+```
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt # <==== All the info you enter in the dashboard
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db # <==== All the data you collect from subjects
+server.log
+templates
+| exp.html
+\ ...
+static
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log # <==== Error messages from the server
+templates
+| exp.html
+\ ...
+static
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates # <==== HTML files 
+| exp.html # <==== Pulls in everything else
+\ ...
+static
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+# exp.html
+
+```html
+<html>
+	<head>
+		<title>Experiment</title>
+		<script src="static/lib/raphael-min.js" type="text/javascript"> </script>
+		<script src="static/lib/jquery-min.js" type="text/javascript"> </script>
+		<script src="static/lib/underscore-min.js" type="text/javascript"> </script>
+		<script src="static/lib/backbone-min.js" type="text/javascript"> </script>
+		
+		<script type="text/javascript">
+		// Subject info, including condition and counterbalance codes.
+		var uniqueId = "{{ uniqueId }}";
+		</script>
+		<script src="static/js/utils.js" type="text/javascript"> </script>
+		<script src="static/js/psiturk.js" type="text/javascript"> </script>
+		<script src="static/js/task.js" type="text/javascript"> </script>
+		<link rel=stylesheet href="static/css/task.css" type="text/css" media="screen">
+	</head>
+	...
+</html>
+
+```
+
+???
+
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static # <==== All other files
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static 
+| favicon.ico # <==== Little icon in the navbar
+| images  # <==== Drop images you want to use here
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static 
+| favicon.ico
+| images
+| \ myimage.jpg
+| css  # <==== Stylesheets
+| \ task.css # <==== Our default stylesheet
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
+
+---
+
+# Stylesheets
+
+```css
+body {
+	background: black;
+	color: white;
+	text-align: center;
+	font-family: Verdana, Helvetica, sans-serif;
+	margin: 0 auto;
+        margin-top: 100px;
+	width: 800px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600italic);
+h1 {
+        font-family: "Crimson Text";
+        font-size: 42pt;
+        font-style: italic;
+}
+```
+
+???
+
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static 
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js  # <--- Javascript
+| | psiturk.js # <--- Our library
+| | task.js # <---  Our task!
+| \ utils.js
+\ lib
+  | jquery-min.js
+  \ ...
+```
+
+???
 
 ---
 
@@ -1231,6 +1539,35 @@ exp.saveData()
 - `psiturk.finishInstructions` — Warn participants not to close window.
 - `psiturk.teardownTask` — Allow window to close.
 
+---
+
+.task[Part 4: Building dynamic web experiments]
+# Anatomy of a project
+
+```bash
+config.txt
+participants.db
+server.log
+templates
+| exp.html
+\ ...
+static 
+| favicon.ico
+| images
+| \ myimage.jpg
+| css
+| \ task.css
+| js
+| | psiturk.js
+| | task.js
+| \ utils.js
+\ lib # <--- JS libraries
+  | jquery-min.js
+  \ ...
+```
+
+???
+
 
 ---
 
@@ -1242,26 +1579,6 @@ These are currently dependencies of `psiturk.js`, we also use them in all our ex
 - [Jquery](http://jquery.org) – Manipulating the website
 - [BackboneJS](http://backbonejs.org) – Organizing your code
 - [UnderscoreJS](http://underscorejs.org) – Helpful functions, e.g. `_.shuffle()` to shuffle stimuli
-
-<!-- ---
-
-(ANNA: Not sure if this should even go here. Or how we can elaborate on this. It seems good to have it in the section that says what psiturk can do, but it's perhaps a bit strange to do this before we even describe what it is...)
-
-
-.task[Part 4: Using psiTurk]
-# What is it actually?
-
-- A small webserver that you run in Python that makes it very easy to customize
-
-- It runs on a designated port on your computer
-
-- You point the Workers at this url
-
-- Based on three key open-source packages:
-
-<img src="http://flask.pocoo.org/static/logo/flask.png" width="250">  
-<img src="http://www.sqlalchemy.org/img/sqla-logo6.gif" width="250">  
-[boto](https://github.com/boto/boto) -->
 
 ---
 
