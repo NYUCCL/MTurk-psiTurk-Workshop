@@ -791,7 +791,7 @@ class: center, middle
 
 - Interactions with AMT that psiTurk handles:
 
-    - Submit a request for HITs (through the Dashboard)
+    - Submit a request for HITs 
 
     - Provide a link to an "ad" that describes the HIT for Workers (this appears within the AMT site when they click 'View a HIT in this group')
 
@@ -1103,6 +1103,61 @@ class: center, middle
   - provides secure hosting (Ad Server)
   - experiment exchange (system for sharing experiments between researchers)
 
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_1.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_2.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_3.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_4.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_5.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_6.png" width="730">
+
+---
+
+class: center, middle
+
+.task[Part 4: Using psiTurk]
+
+<img src="images/cloud_7.png" width="730">
 
 ---
 
@@ -1185,6 +1240,13 @@ pip install psiturk
   - Provides common experiment functionality
   - save data to server, load content, log window changes
 
+---
+
+
+class: center, middle
+# .blue[Part 4]
+### .gray[Checkout psiturk.org and documentation]
+
 
 ---
 
@@ -1195,57 +1257,55 @@ pip install psiturk
 **1. Local testing &amp; debugging**
 
   - Test experiment locally
-  - Javascript (expt logic) &larr;&rarr; dashboard  &larr;&rarr;  expt server
+  - Javascript (expt logic) &larr;&rarr;  expt server
 
 **2. Remote testing (AMT sandbox)**
 
   - Test that your code works on Amazon's servers
-  - Javascript &larr;&rarr; dashboard  &larr;&rarr;  expt server &larr;&rarr; AMT
+  - Javascript &larr;&rarr;  expt server &larr;&rarr; AMT
 
 **3. Live (AMT)**
 
   - Collect data!
-  - Javascript &larr;&rarr; dashboard  &larr;&rarr;  expt server  &larr;&rarr; AMT
+  - Javascript &larr;&rarr;  expt server  &larr;&rarr; AMT
 
 ---
 
 
 .task[Part 4: Using psiTurk]
 
-# Stroop demo
+# Draw together example
 
 ***Goals***
 
 - Test experiment locally
 - Collect &amp; export data
 - Post a HIT in AMT sandbox (requires AMT account).
+- Maybe collect live data
 
 
 **1. Load demo experiment code**
 
 ```bash
 psiturk-setup-example
+cd psiturk-example
 ```
 
-**2. Start dashboard**
+**2. Start command line**
 
 ```bash
 psiturk
 ```
 
-**3. Dashboard overview** (in browser demo)
+**3. Command line overview** (demo)
+
 ---
 
 
-.task[Part 4: Using psiTurk]
-
-# Data
-
-- Data collection and export (in browser demo)
-
-
-
-
+class: center, middle
+# .blue[Part 4]
+### .gray[Begin semi hands-on psiturk demo]
+ 
 
 
 ---
@@ -1287,7 +1347,7 @@ static
 # Anatomy of a project
 
 ```bash
-config.txt # <==== All the info you enter in the dashboard
+config.txt # <==== Configuration options for current hit
 participants.db
 server.log
 templates
@@ -1409,7 +1469,7 @@ static
     <script src="static/lib/backbone-min.js" type="text/javascript"> </script>
     
     <script type="text/javascript">
-    // Subject info, including condition and counterbalance codes.
+    // Subject info, excluding condition and counterbalance codes.
     var uniqueId = "{{ uniqueId }}";
     var adServerLoc = "{{ adServerLoc }}"; // the location of your ad (so you can send user back at end of experiment)
     var mode = "{{ mode }}"; // is this running live, sandbox, or in debug mode?
@@ -1704,7 +1764,7 @@ These are currently dependencies of `psiturk.js`, we also use them in all our ex
 
 class: middle, center
 
-# Let's see an example...
+# Let's see an example using jsPsych
 
 ---
 
