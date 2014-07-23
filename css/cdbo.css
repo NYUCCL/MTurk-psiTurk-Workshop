@@ -216,6 +216,19 @@ body {
 }
 
 
+ .task {
+        /* float: right; */
+        position: absolute;
+        top: 25px;
+        right: 50px;
+        font-size: 18px;
+        padding-top: 0.6em;
+        color: #d3d3d3;
+      }
+      .task a {
+        color: #080;
+        text-decoration: none;
+      }      
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
