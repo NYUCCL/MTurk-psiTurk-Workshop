@@ -1,28 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 
 h1 {
     font-family: 'Inconsolata', sans-serif;
     font-weight: 400; 
-    font-size: 22pt;        
+    font-size: 26pt;        
 }
 
 h2 {
     font-family: 'Inconsolata', sans-serif;
     font-weight: 400; 
-    font-size: 18pt;        
+    font-size: 22pt;        
 }
 
 h3 {
     font-family: 'Inconsolata', sans-serif;
     font-weight: 400; 
-    font-size: 12pt;        
+    font-size: 18pt;        
 }
 
 
 h4 {
     font-family: 'Inconsolata', sans-serif;
     font-weight: 400; 
-    font-size: 11pt;  
+    font-size: 16pt;  
     display:inline;      
 }
 
@@ -104,7 +105,7 @@ h4 {
   margin-top: 20px;
   background: white;
   width: 100%;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
@@ -227,3 +228,11 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
+    .left-half { width: 48%; float: left; }
+    .right-half { width: 48%; float: right; }
+    .jspsych { font-size: 196px; line-height: 48px;         font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+}
+
+    .left-half li, .right-half li { margin-bottom: 0.5em; }
