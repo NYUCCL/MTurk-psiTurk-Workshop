@@ -891,6 +891,61 @@ with Amazon Mechanical turk.
 
 ---
 
+.task[Part 3: Building dynamic web experiments]
+# What is JavaScript?
+
+- For one thing, it has .blue[nothing to do] with Java.
+- It is the .blue[only language] that browsers understand natively 
+    - (but flash is also an option).
+- These slides were compiled in Javascript!
+- Javascript's role in a behavioral experiment:
+    - Control the <span class="blue">task logic</span>: condition, etc.
+    - Control <span class="blue">what subjects see</span> and when.
+    - Collect and store <span class="blue">data</span>, then send it to the server.
+
+---
+
+.task[Part 3: Building dynamic web experiments]
+# What Javascript .blue[can] do
+
+- Interact with a web server (to send or request data for instance)
+- Track clicks, mouse movements, etc.
+- Record response times
+- Track changes in focus and window size
+- Enable group experiments
+
+---
+
+.task[Part 3: Building dynamic web experiments]
+# What Javascript .blue[can't] do
+
+- Control focus (lock participants in a window)
+- Disable browser actions (reloading, going back)
+- Saving directly to a file (server interaction is required)
+
+---
+
+.task[Part 3: Building dynamic web experiments]
+# Learning Javascript
+
+Lots of resources for learning: E.g., [codecademy.com](http://codecademy.com):
+
+<img src="images/codecademy.png" width="750" />
+
+???
+
+No time to teach javascript
+
+One of the most commonly used languages.
+
+One resource I recommend for beginners is codecademy.
+
+Doesn't assume programming experimence.
+
+Guides you through Javascript interactively.
+
+---
+
 class: center, middle
 
 .jspsych[jsPsych]
@@ -984,8 +1039,8 @@ class: center, middle
 name: part4
 class: center, middle
 
-.task[Part 4: Using psiTurk]
-# .blue[Part 4]: Using psiTurk
+.task[Part 4: psiTurk]
+# .blue[Part 4]: Introduction and overview of psiTurk
 
 ---
 
@@ -1160,7 +1215,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1190,7 +1244,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1219,7 +1272,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1249,7 +1301,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1279,7 +1330,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1338,7 +1388,6 @@ static # <==== All other files
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1367,7 +1416,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1396,7 +1444,6 @@ static
 | css  # <==== Stylesheets
 | \ task.css # <==== Our default stylesheet
 | js
-| | psiturk.js
 | | task.js
 | \ utils.js
 \ lib
@@ -1450,7 +1497,6 @@ static
 | css
 | \ task.css
 | js  # <--- Javascript
-| | psiturk.js
 | | task.js # <---  Our task!
 | \ utils.js
 \ lib
@@ -1459,61 +1505,6 @@ static
 ```
 
 ???
-
----
-
-.task[Part 4: Building dynamic web experiments]
-# What is JavaScript?
-
-- For one thing, it has .blue[nothing to do] with Java.
-- It is the .blue[only language] that browsers understand natively 
-    - (but flash is also an option).
-- These slides were compiled in Javascript!
-- Javascript's role in a behavioral experiment:
-    - Control the <span class="blue">task logic</span>: condition, etc.
-    - Control <span class="blue">what subjects see</span> and when.
-    - Collect and store <span class="blue">data</span>, then send it to the server.
-
----
-
-.task[Part 4: Building dynamic web experiments]
-# What Javascript .blue[can] do
-
-- Interact with a web server (to send or request data for instance)
-- Track clicks, mouse movements, etc.
-- Record response times
-- Track changes in focus and window size
-- Enable group experiments
-
----
-
-.task[Part 4: Building dynamic web experiments]
-# What Javascript .blue[can't] do
-
-- Control focus (lock participants in a window)
-- Disable browser actions (reloading, going back)
-- Saving directly to a file (server interaction is required)
-
----
-
-.task[Part 4: Building dynamic web experiments]
-# Learning Javascript
-
-Lots of resources for learning: E.g., [codecademy.com](http://codecademy.com):
-
-<img src="images/codecademy.png" width="750" />
-
-???
-
-No time to teach javascript
-
-One of the most commonly used languages.
-
-One resource I recommend for beginners is codecademy.
-
-Doesn't assume programming experimence.
-
-Guides you through Javascript interactively.
 
 ---
 
@@ -1534,7 +1525,6 @@ static
 | css
 | \ task.css
 | js
-| | psiturk.js # <--- Library for communicating with psiturk server
 | | task.js
 | \ utils.js
 \ lib
