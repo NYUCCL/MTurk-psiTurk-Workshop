@@ -456,7 +456,7 @@ Task Switching
 
 Flanker
 
-  - When identifying a target (e.g. "h"), congruent flankers ("hhhhh") lead to faster RTs than incongruent ("ffhhff") ones
+  - When identifying a target (e.g. "h"), congruent flankers ("hhhhh") lead to faster RTs than incongruent ("fffhff") ones
 
 ]
   
@@ -514,7 +514,7 @@ Masked priming
 
   - Only partially replicated: no negative compatibility effect
 
-  - Lower bound on display duration in browser!
+  - Possibly lower bound on display duration in browser!
 
 ---
 
@@ -842,14 +842,220 @@ class: center, middle
 
 ---
 
+class:
+
+# Key Advantages 
+
+- Open source code base
+- Exchangeable experiments (helps students learn, helps replicability)
+- Enables complex designs that offload computation onto server rather than client
+
+---
+
 
 class: center, middle
 
-.task[Part 4: Using psiTurk]
 
-# End of .blue[Part 3]
-Questions?
+# psiTurk by the numbers
+<img src="images/psiturknumbers.png" width="580">
 
+---
+
+
+class: center, middle
+
+
+<img src="images/workdistribution.png">
+
+---
+
+
+class: center, middle
+
+
+<img src="images/experimentsizes.png">
+
+---
+
+class: middle
+
+
+# Future directions for psiTurk
+
+- Enabling other recruitment gateways beside Mechanical Turk
+(e.g., lab-based studies, studies using mobile devices)
+- Providing API hooks that enable researchers to query a potential
+worker and see if they may have been exposed to a similar manipulation
+in a previous psiTurk task
+- Cloud-based hosting of experiments
+- Exposing the command line elements as a python API which would
+enable adaptive experiment designs
+- Multi-player, multi-participant experiments
+
+---
+
+class: middle
+
+
+# Is AMT "overfished"?
+
+- Our own data viewed only from psiTurk suggest there are a lot of
+"expert workers" on AMT
+- AMT workers may actually be among the most heavily studied participant
+group in human history (behind university undergraduates)
+- The pay-for-work environment on AMT may be counter-productive
+  - extrinsic rewards can emphasize "sufficent" work rather than "good" work
+- AMT population is not that variable
+
+---
+
+class: middle
+
+<img src="images/knowzio.png" width="750">
+
+# The Knowzio Project 
+## with Anna Coenen (NYU Psych) and Panos Ipeirotis (NYU Stern)
+
+---
+
+class: middle
+
+# The Knowzio Project 
+
+- Simple surveys and cognitive tests presented as fun quizes:
+
+<img src="images/knowzioquiz.png" width="750">
+
+---
+
+class: middle
+
+# Internet Advertising as a Tool for Psychology Research
+
+- The Google platform has over 1 billion worldwide users
+- Wide range of individuals in varying traits, personalities, etc...
+- Ad appears like this on different websites:
+
+<center>
+<img src="images/knowzioad.png" width="300">
+</center>
+
+---
+
+class: 
+
+# Cost/Efficiency
+
+- 10 Question survey about US politics
+- Roughly $0.60 per completed survey paid to AdWords (participants are free)
+- 13 days, $30.00/day ad budget:
+  - 848 "converted clicks" (meaning people who completed some or all of the survey)
+  - 641 complete survey completions
+
+---
+class: 
+
+# Targetting recuitment
+
+In many studies, you want to reach particular demographics or subgroups.
+For example, you might want to compare experts versus non-experts on some
+cognitive task
+
+- How to find these people?
+  - AMT is not a good option... unlikely to find experts for particular content
+  - A lot of effort to manually solicit experts via specialist mailing lists, blogs, etc...
+- One idea: Use the advanced targetting features of Internet advertising platforms (Ipeirotis and Gabrilovich, 2014)!
+
+---
+class: 
+
+# Conversion Tracking
+
+- In advertising speak a "conversion" is when someone who clicks on your ad
+does something on your website
+- Could be anything:
+  - sign up for mailing list
+  - hover mouse over an image
+  - **purchase something on ecommerce site**
+
+---
+
+# Conversion Optimizer
+- Attempts to automatically adjust bids (and therefore where the ad appears)
+to optimize converison rate
+<center>
+<img src="images/conversionoptimizer.png" width="600">
+</center>
+
+---
+
+# An Experiment
+
+- Separately optimze two campaigns which captures liberals versus 
+conservatives, without specific keyword or domain targetting (i.e., let the 
+Google system learn)
+- A simple 10 question survey (5 about political beliefs)
+- If clicked on ad associated with "liberal" counts up the number of
+liberal answers you gave.  If clicked on ad associate with "conversative" vice
+versa.
+- Otherwise all settings were identical including keywords, budgets, bidding
+strategies, etc... 
+
+<center>
+<img src="images/immigrantquestion.png" width="400">
+</center>
+
+---
+
+# Some preliminary results
+
+<center>
+<img src="images/prelimresultsadwords.png" width="750">
+</center>
+
+---
+
+# How it gets there
+
+Google optimizes the conversion rate, which will be higher
+for sites where people get relatively high scores according
+to our scheme (11 would be answering conservative/liberal on every question).
+<br><br>
+<center>
+<img src="images/conservativewebsite.png" width="600">
+</center>
+<br><br>
+Preliminary data, generally sparse so hard to see exactly how this
+will play out across many websites
+
+---
+
+# Future Questions
+
+- How costly is this for complete psychology studies (comparable to the kinds we've
+run on AMT)?
+- How does the data compare from this method to the AMT one?
+- What types of psychological or individual difference variables can you optimize
+for?
+- *BTW* - Google provides up to $10K of credits on AdWords to certified non-profit entities
+
+---
+
+# Summary
+
+- For many psychologists the Internet is the Lab
+- An exciting time for exploring new methods and techniques for Internet recruitment
+in research studies
+- Five years ago better to work in a research lab at Google/Facebook (more data) but
+tools are increasingly available for large scale experiments conducted within academic
+research budgets
+- Important role of tool building in facilitating best research practices and facilitating
+replication/open science.
+
+---
+
+class: center, middle
+#Thanks!!
 
     </textarea>
     <script type="text/javascript">
